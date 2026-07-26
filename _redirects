@@ -1,0 +1,4 @@
+# retired URL structures -> current service pages
+
+/texas/*  /hard-money-loans/:splat  301
+/texas/  /hard-money-loans/  301
