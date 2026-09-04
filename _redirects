@@ -1,38 +1,13 @@
-# retired URL structures -> current service pages
+# retired URL structures -> current pages
+# Sep 4 2026: the generated city pages are being retired. Blue-state pages
+# (fee not payable without a state licence) are deleted. Nothing redirected
+# below was ever indexed except the four named pages at the bottom.
 
 /texas/*  /hard-money-loans/:splat  301
 /texas/  /hard-money-loans/  301
 
-# states this brand cannot serve -> availability page
-/hard-money-loans/*-nv.html  /states.html  301
-/fix-and-flip-loans/*-nv.html  /states.html  301
-/bridge-loans/*-nv.html  /states.html  301
-/dscr-loans/*-nv.html  /states.html  301
-/private-money-lender/*-nv.html  /states.html  301
-/rehab-loans/*-nv.html  /states.html  301
-/real-estate-investor-loans/*-nv.html  /states.html  301
-/hard-money-lender/*-nv.html  /states.html  301
-/hard-money-loans/*-ut.html  /states.html  301
-/fix-and-flip-loans/*-ut.html  /states.html  301
-/bridge-loans/*-ut.html  /states.html  301
-/dscr-loans/*-ut.html  /states.html  301
-/private-money-lender/*-ut.html  /states.html  301
-/rehab-loans/*-ut.html  /states.html  301
-/real-estate-investor-loans/*-ut.html  /states.html  301
-/hard-money-lender/*-ut.html  /states.html  301
-/hard-money-loans/*-sd.html  /states.html  301
-/fix-and-flip-loans/*-sd.html  /states.html  301
-/bridge-loans/*-sd.html  /states.html  301
-/dscr-loans/*-sd.html  /states.html  301
-/private-money-lender/*-sd.html  /states.html  301
-/rehab-loans/*-sd.html  /states.html  301
-/real-estate-investor-loans/*-sd.html  /states.html  301
-/hard-money-lender/*-sd.html  /states.html  301
-/hard-money-loans/*-vt.html  /states.html  301
-/fix-and-flip-loans/*-vt.html  /states.html  301
-/bridge-loans/*-vt.html  /states.html  301
-/dscr-loans/*-vt.html  /states.html  301
-/private-money-lender/*-vt.html  /states.html  301
-/rehab-loans/*-vt.html  /states.html  301
-/real-estate-investor-loans/*-vt.html  /states.html  301
-/hard-money-lender/*-vt.html  /states.html  301
+# old service pages -> the researched pillar pages that replaced them
+/fix-and-flip  /fix-and-flip-loans/  301
+/fix-and-flip.html  /fix-and-flip-loans/  301
+/how-it-works  /what-is-a-hard-money-loan/  301
+/how-it-works.html  /what-is-a-hard-money-loan/  301
