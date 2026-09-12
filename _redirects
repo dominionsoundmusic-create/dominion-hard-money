@@ -3,7 +3,7 @@
 # (fee not payable without a state licence) are deleted. Nothing redirected
 # below was ever indexed except the four named pages at the bottom.
 
-/texas/*  /hard-money-loans/:splat  301
+/texas/*  /hard-money-loans/  301
 /texas/  /hard-money-loans/  301
 
 # old service pages -> the researched pillar pages that replaced them
@@ -15,3 +15,13 @@
 # duplicate blog posts retired Sep 7 2026 -> the surviving version
 /blog/hard-money-vs-conventional-financing-for-investors-1785707801260.html  /blog/hard-money-vs-conventional-financing-for-investors-1786279019409.html  301
 /blog/what-lenders-look-for-in-a-fix-and-flip-deal-1785851759381.html  /blog/what-lenders-look-for-in-a-fix-and-flip-deal-1786106947058.html  301
+
+# Sep 12 2026 - templated city pages retired; wildcards send them to the service hub.
+/bridge-loans/*  /bridge-loans/  301
+/dscr-loans/*  /dscr-loans/  301
+/fix-and-flip-loans/*  /fix-and-flip-loans/  301
+/hard-money-lender/*  /hard-money-lender/  301
+/hard-money-loans/*  /hard-money-loans/  301
+/private-money-lender/*  /private-money-lender/  301
+/real-estate-investor-loans/*  /real-estate-investor-loans/  301
+/rehab-loans/*  /rehab-loans/  301
