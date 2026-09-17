@@ -463,7 +463,9 @@ def guard_hard_specific(fields: dict, body_text: str) -> None:
 # --------------------------------------------------------------------------
 
 
-def guard_compliance(article_html: str, article_text: str) -> None:
+def guard_compliance(article_text: str, page_text: str) -> None:
+    # Banned phrases are checked against the article, which is the only part
+    # of the page the model writes.
     haystack = article_text.lower()
     for phrase in BANNED:
         if phrase in haystack:
@@ -475,8 +477,11 @@ def guard_compliance(article_html: str, article_text: str) -> None:
     for name in NEVER_NAME:
         if name in haystack:
             fail(f"draft names {name!r}, which must never appear in a post")
-    if DISCLOSURE.lower() not in haystack:
-        fail("required disclosure is missing from the article body")
+
+    # The disclosure belongs in the footer, where every existing post carries
+    # it, so it is checked against the whole page rather than the article.
+    if DISCLOSURE.lower() not in page_text.lower():
+        fail("required disclosure is missing from the page")
 
 
 def guard_markup(body: str) -> None:
@@ -562,7 +567,7 @@ def render_post(fields: dict, slug: str, ts: int) -> str:
     <a href="{CTA_HREF}">{CTA_LABEL}</a>
   </div>
 
-  <p>{html.escape(fields["SOURCING"], quote=False)} {DISCLOSURE}</p>
+  <p>{html.escape(fields["SOURCING"], quote=False)}</p>
 
 </article>
 
@@ -683,11 +688,10 @@ def main() -> int:
         guard_markup(fields["BODY"])
 
         post_html = render_post(fields, slug, ts)
-        article = article_of(post_html)
-        article_text = strip_tags(article)
+        article_text = strip_tags(article_of(post_html))
 
         guard_hard_specific(fields, article_text)
-        guard_compliance(article, article_text)
+        guard_compliance(article_text, strip_tags(post_html))
 
         # All guards passed. Only now does anything touch the working tree.
         path = BLOG / f"{slug}-{ts}.html"

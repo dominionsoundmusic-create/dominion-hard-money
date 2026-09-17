@@ -303,35 +303,46 @@ class TestCompliance(Base):
             BODY=BODY.replace("Mortgage Bankers Association", "Cogo Capital", 1)
         )
 
-    def test_published_post_carries_the_disclosure_in_the_article_body(self):
+    def test_disclosure_is_carried_by_the_footer_not_the_article(self):
+        # Matches the ten existing posts: the disclosure lives in the footer
+        # boilerplate and is not repeated in the article body.
         self.assertPublished()
-        article = self.mod.article_of(self.new_post().read_text(encoding="utf-8"))
-        self.assertIn(self.mod.DISCLOSURE, self.mod.strip_tags(article))
+        page = self.new_post().read_text(encoding="utf-8")
+        self.assertIn(self.mod.DISCLOSURE, self.mod.strip_tags(page))
+        self.assertNotIn(
+            self.mod.DISCLOSURE,
+            self.mod.strip_tags(self.mod.article_of(page)),
+            "the disclosure should not be duplicated into the article body",
+        )
 
-    def test_guard_rejects_an_article_without_the_disclosure(self):
-        # Exercised against guard_compliance directly. Going through the
-        # renderer cannot fail this check, because the template injects the
-        # same constant the guard looks for -- so this is the only place the
-        # disclosure rule is actually put under test.
-        article = "<p>A post with figures but no disclosure at all.</p>"
+    def test_guard_rejects_a_page_without_the_disclosure(self):
+        # Checked against guard_compliance directly. A rendered post always
+        # carries the footer, so the renderer cannot exercise this branch --
+        # this is the only place the disclosure rule is actually under test.
+        article = "A post with figures but no disclosure."
         with self.assertRaises(self.mod.Skip) as ctx:
-            self.mod.guard_compliance(article, self.mod.strip_tags(article))
+            self.mod.guard_compliance(article, article)
         self.assertIn("disclosure", str(ctx.exception))
 
-    def test_guard_accepts_an_article_carrying_the_disclosure(self):
-        article = f"<p>A post with figures. {self.mod.DISCLOSURE}</p>"
-        self.mod.guard_compliance(article, self.mod.strip_tags(article))
+    def test_guard_accepts_a_page_carrying_the_disclosure_in_the_footer(self):
+        article = "A post with figures."
+        self.mod.guard_compliance(article, f"{article} {self.mod.DISCLOSURE}")
 
     def test_a_disclosure_variant_does_not_satisfy_the_guard(self):
-        # What the Sept 14 post actually says in its body: "we arrange"
-        # rather than "it arranges". Close is not good enough.
+        # What the Sept 14 post says in its body: "we arrange" rather than
+        # "it arranges". Close is not good enough.
         variant = (
-            "<p>Dominion Hard Money does not lend its own funds; we arrange "
-            "financing for real estate investors through third-party lending "
-            "partners.</p>"
+            "Dominion Hard Money does not lend its own funds; we arrange "
+            "financing for real estate investors through third-party lending partners."
         )
         with self.assertRaises(self.mod.Skip):
-            self.mod.guard_compliance(variant, self.mod.strip_tags(variant))
+            self.mod.guard_compliance("A post with figures.", variant)
+
+    def test_banned_phrases_are_scoped_to_the_article_not_the_footer(self):
+        # The footer says "does not lend its own funds", which must not be
+        # mistaken for a lender claim in the article.
+        page = f"A post with figures. {self.mod.DISCLOSURE}"
+        self.mod.guard_compliance("A post with figures.", page)
 
 
 class TestMarkup(Base):
