@@ -3,9 +3,10 @@
 
 Run weekly by .github/workflows/weekly-news.yml. The script researches a
 subject with live web search, drafts a post, then puts the draft through three
-mandatory guards. Every guard fails closed: on any failure nothing is written
-to the working tree and the process exits non-zero, so the week is skipped
-rather than published as a weak or non-compliant post.
+mandatory guards, gated on proof that the search actually ran. Every check
+fails closed: on any failure nothing is written to the working tree and the
+process exits non-zero, so the week is skipped rather than published as a
+weak or non-compliant post.
 
 Nothing is written until all guards have passed.
 """
@@ -215,11 +216,51 @@ def build_prompt(previous: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def collect_search_evidence(blocks, evidence: dict) -> None:
+    """Record what the web_search server tool actually did.
+
+    Server tool failures come back as HTTP 200 with an error object in place
+    of the result list (max_uses_exceeded, unavailable, and so on) rather than
+    raising, so a silently failed search would otherwise leave the model free
+    to write from training with nothing downstream able to tell the
+    difference.
+    """
+    for block in blocks:
+        if getattr(block, "type", "") != "web_search_tool_result":
+            continue
+        evidence["results"] += 1
+        content = getattr(block, "content", None)
+        if isinstance(content, list):
+            # A success carries a list of web_search_result items; an empty
+            # list is a search that found nothing, which is not evidence.
+            evidence["hits"] += len(content)
+        else:
+            code = None
+            if isinstance(content, dict):
+                code = content.get("error_code")
+            else:
+                code = getattr(content, "error_code", None)
+            evidence["errors"].append(code or "unknown_error")
+
+
+def guard_search_ran(evidence: dict) -> None:
+    """Guard 2 is only meaningful if the figures came from a live search."""
+    if evidence["results"] == 0:
+        fail(
+            "web_search never ran: no web_search_tool_result block came back, "
+            "so the draft would be written from training data"
+        )
+    if evidence["hits"] == 0:
+        detail = ", ".join(sorted(set(evidence["errors"]))) or "no results returned"
+        fail(f"every web search failed or came back empty ({detail})")
+
+
 def draft(previous: list[dict]) -> dict:
     import anthropic
 
     client = anthropic.Anthropic()
     messages = [{"role": "user", "content": build_prompt(previous)}]
+    evidence = {"results": 0, "hits": 0, "errors": []}
 
     # web_search can return stop_reason "pause_turn" on a long research turn;
     # hand the partial turn back to continue it.
@@ -235,6 +276,9 @@ def draft(previous: list[dict]) -> dict:
         ) as stream:
             response = stream.get_final_message()
 
+        # Search results can land in any turn, including ones that paused.
+        collect_search_evidence(response.content, evidence)
+
         if response.stop_reason == "refusal":
             fail("model declined the request (stop_reason: refusal)")
         if response.stop_reason == "max_tokens":
@@ -245,12 +289,18 @@ def draft(previous: list[dict]) -> dict:
     else:
         fail("web search did not settle after 8 continuations")
 
+    guard_search_ran(evidence)
+
     text = "\n".join(
         block.text for block in response.content if getattr(block, "type", "") == "text"
     ).strip()
     if not text:
         fail("model returned no text")
-    return parse_fields(text)
+
+    fields = parse_fields(text)
+    fields["_searches"] = str(evidence["results"])
+    fields["_hits"] = str(evidence["hits"])
+    return fields
 
 
 def parse_fields(text: str) -> dict:
@@ -657,7 +707,11 @@ def main() -> int:
         print(f"title:  {fields['TITLE']}")
         print(f"file:   blog/{path.name}")
         print(f"topic:  {fields['TOPIC']}")
-        print("guards: anti-sameness, hard specific, compliance -- all passed")
+        print(
+            f"search: {fields.get('_searches', '?')} searches, "
+            f"{fields.get('_hits', '?')} results"
+        )
+        print("guards: live search, anti-sameness, hard specific, compliance -- all passed")
         return 0
 
     except Skip as exc:
