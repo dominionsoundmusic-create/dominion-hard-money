@@ -1,0 +1,86 @@
+name: Weekly news post
+
+# Tuesdays at 13:00 UTC, plus a manual button. GitHub's scheduler is the only
+# thing that fires this; there is no always-on service to spin down.
+on:
+  schedule:
+    - cron: '0 13 * * 2'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-news
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install the Anthropic SDK
+        run: pip install --disable-pip-version-check 'anthropic>=1.6,<2'
+
+      # Researches, drafts, and runs the three guards. Every guard fails
+      # closed: on any failure the script writes nothing and exits non-zero,
+      # which fails the job here and skips the week.
+      - name: Generate this week's post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python .github/scripts/weekly_news.py
+
+      - name: Commit the post, the index and the sitemap
+        run: |
+          set -euo pipefail
+
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "generator reported success but changed nothing"
+            exit 1
+          fi
+
+          # Only the three expected paths may change.
+          unexpected="$(git status --porcelain \
+            | awk '{print $NF}' \
+            | grep -Ev '^(blog/[a-z0-9-]+-[0-9]{13}\.html|blog/index\.html|sitemap\.xml)$' \
+            || true)"
+          if [ -n "$unexpected" ]; then
+            echo "unexpected paths changed:"
+            echo "$unexpected"
+            exit 1
+          fi
+
+          post="$(git status --porcelain \
+            | awk '{print $NF}' \
+            | grep -E '^blog/[a-z0-9-]+-[0-9]{13}\.html$' \
+            | head -1)"
+          title="$(sed -n 's/.*<title>\(.*\) | Dominion Hard Money<\/title>.*/\1/p' "$post" | head -1)"
+
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+          git add -A
+          git commit -m "Publish weekly news post: ${title}" \
+                     -m "Adds ${post}, rebuilds blog/index.html newest-first, and lists the post in sitemap.xml."
+
+          for attempt in 1 2 3 4; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "push failed, retrying"
+            sleep $((2 ** attempt))
+            git pull --rebase origin main
+          done
+          echo "could not push after 4 attempts"
+          exit 1

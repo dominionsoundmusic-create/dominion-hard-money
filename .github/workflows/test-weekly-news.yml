@@ -1,0 +1,37 @@
+name: Test weekly news generator
+
+# The generator publishes unattended, so its guards are tested on every change
+# to them rather than only when a Tuesday run goes wrong.
+on:
+  push:
+    paths:
+      - '.github/scripts/weekly_news.py'
+      - '.github/scripts/test_weekly_news.py'
+      - '.github/workflows/test-weekly-news.yml'
+      - 'blog/**'
+      - 'sitemap.xml'
+  pull_request:
+    paths:
+      - '.github/scripts/weekly_news.py'
+      - '.github/scripts/test_weekly_news.py'
+      - '.github/workflows/test-weekly-news.yml'
+      - 'blog/**'
+      - 'sitemap.xml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # The tests stub the model call, so no API key and no network needed.
+      - name: Run the guard tests
+        run: python .github/scripts/test_weekly_news.py
