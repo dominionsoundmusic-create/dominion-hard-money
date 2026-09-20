@@ -1,0 +1,4 @@
+/books/free/thanks/*
+  X-Robots-Tag: noindex, nofollow
+/books/free/files/*
+  X-Robots-Tag: noindex, nofollow
