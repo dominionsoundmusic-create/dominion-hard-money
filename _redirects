@@ -1,3 +1,6 @@
+# Sep 20 2026: never serve the automation scripts folder publicly
+/.github/*  /  404!
+
 # retired URL structures -> current pages
 # Sep 4 2026: the generated city pages are being retired. Blue-state pages
 # (fee not payable without a state licence) are deleted. Nothing redirected
