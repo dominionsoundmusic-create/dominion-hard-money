@@ -7,11 +7,13 @@ og_type: article
 canonical: https://dominionhardmoney.com/hard-money-calculator/
 crumbs: [["Home", "https://dominionhardmoney.com/"], ["Loan calculator", ""]]
 h1: Hard Money Loan Calculator
-lede: Run the deal before you call a lender. This sizes the loan the way an underwriter sizes it, then shows what the money actually costs and what is left when the property sells.
+lede: Run the deal before you call a lender. This sizes the loan the way an underwriter does, then shows what the money costs and what is left when the property sells.
 cta: Get your deal reviewed
+cta2: See today's rates|/hard-money-rates/
+hero_img: /images/rates-hero.jpg
+hero_alt: A calculator, house keys, a small model house and printed rate sheets on a wooden desk in window light
 form: deal
-faq_from_jsonld: yes
-faq_count_jsonld: 5
+faq_heading: Calculator questions
 ---
 <section class="rail"><div class="intro"><div class="hmc"><h2>Deal calculator</h2><p class="hmc-sub">Nothing is sent anywhere. The numbers stay in your browser.</p><div class="hmc-tabs" role="tablist"><button aria-controls="panel-flip" aria-selected="true" class="hmc-tab" id="tab-flip" role="tab">Fix &amp; flip</button><button aria-controls="panel-dscr" aria-selected="false" class="hmc-tab" id="tab-dscr" role="tab">DSCR rental</button></div><div aria-labelledby="tab-flip" id="panel-flip" role="tabpanel"><div class="hmc-grid"><div class="hmc-field"><label for="f-price">Purchase price</label><div class="hmc-inp hmc-pre"><span>$</span><input id="f-price" inputmode="decimal" type="number" value="185000"/></div></div><div class="hmc-field"><label for="f-rehab">Rehab budget</label><div class="hmc-inp hmc-pre"><span>$</span><input id="f-rehab" inputmode="decimal" type="number" value="55000"/></div></div><div class="hmc-field"><label for="f-arv">After-repair value <span class="hmc-hint">what it sells for, finished</span></label><div class="hmc-inp hmc-pre"><span>$</span><input id="f-arv" inputmode="decimal" type="number" value="330000"/></div></div><div class="hmc-field"><label for="f-arvpct">Lender cap on ARV</label><div class="hmc-inp hmc-sufpad"><input id="f-arvpct" inputmode="decimal" type="number" value="70"/><span class="hmc-suf">%</span></div></div><div class="hmc-field"><label for="f-ltc">Lender cap on total cost <span class="hmc-hint">purchase + rehab</span></label><div class="hmc-inp hmc-sufpad"><input id="f-ltc" inputmode="decimal" type="number" value="90"/><span class="hmc-suf">%</span></div></div><div class="hmc-field"><label for="f-rate">Interest rate</label><div class="hmc-inp hmc-sufpad"><input id="f-rate" inputmode="decimal" type="number" value="11.5"/><span class="hmc-suf">%</span></div></div><div class="hmc-field"><label for="f-points">Points</label><div class="hmc-inp hmc-sufpad"><input id="f-points" inputmode="decimal" type="number" value="2"/><span class="hmc-suf">%</span></div></div><div class="hmc-field"><label for="f-months">Months held</label><div class="hmc-inp"><input id="f-months" inputmode="decimal" type="number" value="8"/></div></div><div class="hmc-field"><label for="f-close">Closing costs <span class="hmc-hint">title, appraisal, legal</span></label><div class="hmc-inp hmc-pre"><span>$</span><input id="f-close" inputmode="decimal" type="number" value="3500"/></div></div><div class="hmc-field"><label for="f-hold">Monthly holding <span class="hmc-hint">taxes, insurance, utilities</span></label><div class="hmc-inp hmc-pre"><span>$</span><input id="f-hold" inputmode="decimal" type="number" value="450"/></div></div><div class="hmc-field"><label for="f-sell">Selling costs</label><div class="hmc-inp hmc-sufpad"><input id="f-sell" inputmode="decimal" type="number" value="8"/><span class="hmc-suf">%</span></div></div></div><div class="hmc-verdict" id="f-verdict"></div><ul class="hmc-flags" id="f-flags"></ul><div class="hmc-out" id="f-out"></div><p class="hmc-note">Interest is estimated on funds actually drawn: purchase money for the full term, rehab money for about half of it, because draws are released as work is inspected. A lender charging on the full balance from day one would cost you <span id="f-fullint"></span>.</p></div><div aria-labelledby="tab-dscr" hidden="" id="panel-dscr" role="tabpanel"><div class="hmc-grid"><div class="hmc-field"><label for="d-rent">Monthly rent</label><div class="hmc-inp hmc-pre"><span>$</span><input id="d-rent" inputmode="decimal" type="number" value="2600"/></div></div><div class="hmc-field"><label for="d-loan">Loan amount</label><div class="hmc-inp hmc-pre"><span>$</span><input id="d-loan" inputmode="decimal" type="number" value="210000"/></div></div><div class="hmc-field"><label for="d-rate">Interest rate</label><div class="hmc-inp hmc-sufpad"><input id="d-rate" inputmode="decimal" type="number" value="7.25"/><span class="hmc-suf">%</span></div></div><div class="hmc-field"><label for="d-years">Amortization</label><div class="hmc-inp hmc-sufpad"><input id="d-years" inputmode="decimal" type="number" value="30"/><span class="hmc-suf">yrs</span></div></div><div class="hmc-field"><label for="d-tax">Annual property tax</label><div class="hmc-inp hmc-pre"><span>$</span><input id="d-tax" inputmode="decimal" type="number" value="5200"/></div></div><div class="hmc-field"><label for="d-ins">Annual insurance</label><div class="hmc-inp hmc-pre"><span>$</span><input id="d-ins" inputmode="decimal" type="number" value="2400"/></div></div><div class="hmc-field"><label for="d-hoa">Monthly HOA</label><div class="hmc-inp hmc-pre"><span>$</span><input id="d-hoa" inputmode="decimal" type="number" value="0"/></div></div></div><div class="hmc-verdict" id="d-verdict"></div><ul class="hmc-flags" id="d-flags"></ul><div class="hmc-out" id="d-out"></div><p class="hmc-note">DSCR compares gross rent to the full housing payment. Vacancy, management and repairs are not in the ratio, which is why a property can qualify on paper and still run thin in real life.</p></div></div></div></section>
 <section class="rail"><div class="intro">
@@ -20,12 +22,13 @@ faq_count_jsonld: 5
 <p><strong>Loan to value</strong> measures against what the property is worth today, as it sits. <strong>Loan to cost</strong> measures against what you are putting into it, purchase plus rehab. <strong>Loan to ARV</strong> measures against what it will be worth finished. A lender advertising one hundred percent of cost still caps the same loan at seventy percent of ARV, so where the rehab is generous relative to the resale price, the ARV ceiling binds first and you bring the difference.</p>
 <p>Move the two cap fields above and watch which one controls. When the ARV cap binds, more rehab spending does not get you more loan. It comes out of your pocket.</p>
 </div></section>
+<photo src="rehab-in-progress" alt="An interior room mid-renovation with exposed wall framing, new windows and two stepladders" caption="Rehab money is usually released after work is inspected, so you fund the first stretch yourself."></photo>
 <section class="band"><div class="intro">
 <h2>What the calculator cannot see</h2>
 <p>Every number above is a projection, and four things move them in the real world.</p>
 <p><strong>The appraisal.</strong> Your ARV is an opinion until an appraiser or a broker price opinion agrees with it. Come in ten percent under and the loan shrinks by seventy cents on every dollar of that miss.</p>
 <p><strong>The draw schedule.</strong> Rehab money is reimbursed after work is completed and inspected, not advanced before it starts. You need working capital to reach the first inspection, and that cash is not in the loan.</p>
-<p><strong>Days on market.</strong> The term is your real deadline. If the calculator says eight months and the house sits for five after a four-month rehab, you are into extension territory, and extension fees usually run about a point with the interest continuing.</p>
+<p><strong>Days on market.</strong> The term is your real deadline. If the calculator says eight months and the house sits for five after a four-month rehab, you are into extension territory, and an extension usually means a fee on top of continuing interest.</p>
 <p><strong>The contingency you did not budget.</strong> Ten to fifteen percent on top of the rehab number is standard for a reason. Add it to the rehab field rather than discovering it in month three.</p>
 </div></section>
 <section class="rail"><div class="intro">
@@ -34,21 +37,11 @@ faq_count_jsonld: 5
 <p>Hold it eight months at 11.5 percent and interest runs about $14,500 on the funds actually drawn. Holding adds $3,600 and selling takes $26,400. Roughly $37,700 is left, on about $49,900 of your cash, which is a 76 percent return in eight months.</p>
 <p>Notice what the calculator flags anyway: at $185,000 the purchase price sits $9,000 above the seventy percent ceiling. The deal is still profitable. That is the honest relationship between the rule and reality. It is a screen that saves you time, not a verdict.</p>
 <p>Now change one number. Drop the ARV to $300,000, a single optimistic comp corrected. Profit falls from $37,700 to $10,700, and the cash you must bring rises from $31,820 to $37,700, because the ARV cap now binds before the cost cap and the lender advances less. A $30,000 error in your comps costs $27,000 of profit and demands $5,880 more of your own money.</p>
-<div class="callout"><strong>The terms these defaults come from.</strong><br/>
-Fix and flip and bridge financing through our lending partner runs from 10.99 percent with 1.99 points, up to 100 percent of cost and 70 percent of value, minimum loan $50,000, terms to twelve months, minimum credit score 600. The 10.99 percent starting rate is available after two loans have been paid off in good standing with our lending partner; a first-time borrower should expect to start above it and earn the way down. Ground-up construction starts at 8.5 percent. DSCR rental loans start at 5.99 percent, $75,000 to $2 million, to 80 percent of value, with no minimum credit score. There is also a rate match: bring a fully executed letter of intent from a competing lender, with no contingencies, that meets the same underwriting, and the interest rate gets matched. It applies to the rate only and is not a commitment to fund.</div>
-<h2>Common questions</h2>
-<h3>Is the payment really interest only?</h3>
-<p>On short-term flip and bridge financing, yes. Monthly interest, with the principal repaid in one balloon when the property sells or refinances. The DSCR tab is the amortizing one, because those loans are held for years.</p>
-<h3>What is a point?</h3>
-<p>One percent of the loan amount, paid up front at closing. Two points on a $216,000 loan is $4,320. It is a real cost of capital and it belongs in your profit math.</p>
-<h3>Why is my deal failing at seventy percent?</h3>
-<p>The seventy percent rule says your purchase price should sit below seventy percent of ARV minus rehab. If a deal fails it badly, the usual answer is that the purchase price is too high rather than that you need a more generous lender.</p>
-<h3>Does the calculator run my credit?</h3>
-<p>No. Nothing typed above leaves your browser. Credit only comes into it when you submit a deal below.</p>
-<h3>What DSCR do I need?</h3>
-<p>1.25 gets the best pricing. Between 1.00 and 1.25 is approvable with pricing adjustments. Below 1.00 narrows the field considerably and generally requires reserves.</p>
+<div class="callout"><strong>How the defaults compare with our lending partners' terms.</strong><br/>
+The defaults above are a generic example. Through our lending partners, fix and flip, rehab and bridge loans are priced from 12.99 percent plus 2.99 points as standard, so enter 12.99 and 2.99 to see that cost on your deal. They lend up to 100 percent of cost and up to 70 percent of after-repair value, whichever is lower, on loans from $50,000 with a 600 minimum credit score. Borrowers who have paid off two loans with the lending partner in good standing can qualify for 10.99 percent plus 1.99 points. Their 30-year DSCR rental loans run from $50,000 to $2 million per property, up to 80 percent of value on a purchase, with no minimum credit score. Dominion Hard Money does not lend its own funds; it arranges financing through third-party lending partners, and the lender sets the final terms.</div>
 </div></section>
 <div class="intro"><deal-form></deal-form></div>
+<photo src="flip-hero" alt="A large renovated two-story white house with a wide front porch and a small yard sign" caption="The after-repair value is the number every other line depends on. Check it against real sales."></photo>
 <section class="rail"><div class="intro"><h2>Keep reading</h2><p><a href="/hard-money-rates/">What hard money costs in 2026</a> · <a href="/fix-and-flip-loans/">Fix and flip loans</a> · <a href="/dscr-loans/">DSCR loans</a> · <a href="/hard-money-requirements/">What lenders require</a> · <a href="/what-is-a-hard-money-loan/">How hard money works</a></p></div></section>
 <page-assets>
 <script>
@@ -101,8 +94,8 @@ function flip(){
  v.className='hmc-verdict '+cls;v.innerHTML=msg;
  var f=[];
  if(room<0)f.push('Purchase price is '+money(Math.abs(room))+' above the 70% rule ceiling of '+money(mao)+'.');
- if(loan>0&&loan<50000)f.push('Below the $50,000 minimum loan on most bridge and flip programs.');
- if(months>12)f.push('Over twelve months. Flip and bridge terms cap there \u2014 expect an extension fee.');
+ if(loan>0&&loan<50000)f.push('Below the $50,000 minimum loan on our lending partners\' flip and bridge loans.');
+ if(months>12)f.push('Over twelve months. Many flip and bridge loans mature within a year, so plan for the cost of an extension.');
  if(price>0&&rehab>price*0.75)f.push('Rehab is large relative to purchase. Expect closer scrutiny of the scope of work.');
  if(sellPct<0.06)f.push('Selling costs under 6% is optimistic once commission, title and concessions land.');
  $('f-flags').innerHTML=f.map(function(x){return '<li>'+x+'</li>';}).join('');
@@ -127,13 +120,13 @@ function dscr(){
  h+=row('Loan that would hit 1.25',money(Math.max(0,maxLoan)));
  $('d-out').innerHTML=h;
  var v=$('d-verdict'),cls,msg;
- if(ratio>=1.25){cls='hmc-good';msg='<strong>'+ratio.toFixed(2)+' \u2014 best pricing tier.</strong> The rent covers the payment with room to spare.';}
- else if(ratio>=1.0){cls='hmc-warn';msg='<strong>'+ratio.toFixed(2)+' \u2014 approvable, with a price.</strong> Above 1.00 gets done, but expect a rate adjustment or a lower advance.';}
- else{cls='hmc-bad';msg='<strong>'+ratio.toFixed(2)+' \u2014 the rent does not cover the payment.</strong> Fewer lenders go here, and those that do want reserves and a larger down payment.';}
+ if(ratio>=1.25){cls='hmc-good';msg='<strong>'+ratio.toFixed(2)+': comfortable coverage.</strong> The rent covers the payment with room to spare.';}
+ else if(ratio>=1.0){cls='hmc-warn';msg='<strong>'+ratio.toFixed(2)+': covered, but thin.</strong> The rent covers the payment. Some lenders price this range higher or advance less, so ask.';}
+ else{cls='hmc-bad';msg='<strong>'+ratio.toFixed(2)+': the rent does not cover the payment.</strong> Fewer lenders go here, and those that do tend to want more cash in the deal.';}
  v.className='hmc-verdict '+cls;v.innerHTML=msg;
  var f=[];
- if(loan>0&&loan<75000)f.push('Below the $75,000 minimum on most DSCR programs.');
- if(loan>2000000)f.push('Above the $2 million ceiling on standard DSCR \u2014 this becomes a commercial file.');
+ if(loan>0&&loan<50000)f.push('Below the $50,000 minimum on our lending partners\' DSCR loans.');
+ if(loan>2000000)f.push('Above the $2 million per-property maximum on our lending partners\' DSCR loans.');
  if(ratio>0&&ratio<1.0)f.push('Raising rent to '+money(pitia*1.25)+' or cutting the loan to '+money(Math.max(0,maxLoan))+' would reach 1.25.');
  $('d-flags').innerHTML=f.map(function(x){return '<li>'+x+'</li>';}).join('');
 }
@@ -144,14 +137,14 @@ flip();dscr();
 </script>
 </page-assets>
 <faq>
-<h3>Is the payment really interest only?</h3>
-<p>On short-term flip and bridge financing, yes. Monthly interest, with the principal repaid in one balloon when the property sells or refinances. The DSCR tab is the amortizing one, because those loans are held for years.</p>
-<h3>What is a point?</h3>
-<p>One percent of the loan amount, paid up front at closing. Two points on a $216,000 loan is $4,320. It is a real cost of capital and it belongs in your profit math.</p>
-<h3>Why is my deal failing at seventy percent?</h3>
-<p>The seventy percent rule says your purchase price should sit below seventy percent of ARV minus rehab. If a deal fails it badly, the usual answer is that the purchase price is too high rather than that you need a more generous lender.</p>
-<h3>Does the calculator run my credit?</h3>
-<p>No. Nothing typed above leaves your browser. Credit only comes into it when you submit a deal below.</p>
-<h3>What DSCR do I need?</h3>
-<p>1.25 gets the best pricing. Between 1.00 and 1.25 is approvable with pricing adjustments. Below 1.00 narrows the field considerably and generally requires reserves.</p>
+<h3>Are hard money loan payments interest only?</h3>
+<p>On short-term flip and bridge financing, usually yes: monthly interest, with the principal repaid in one payment when the property sells or refinances. The DSCR tab is the amortizing one, because those loans are held for years.</p>
+<h3>How much is a point on a hard money loan?</h3>
+<p>One point is 1 percent of the loan amount, paid at closing. Two points on a $216,000 loan is $4,320; at our lending partners' standard 2.99 points it would be about $6,460. It is a real cost of capital and it belongs in your profit math.</p>
+<h3>What is the 70 percent rule in house flipping?</h3>
+<p>A rule of thumb that your purchase price should sit at or below 70 percent of the after-repair value minus the rehab budget. If a deal fails it badly, the usual answer is that the purchase price is too high rather than that you need a more generous lender.</p>
+<h3>Does this calculator check my credit?</h3>
+<p>No. Nothing typed into it leaves your browser. Credit only comes into it if you submit a deal through the form, and the lending partner explains its process before anything is pulled.</p>
+<h3>What DSCR do I need to qualify for a rental loan?</h3>
+<p>Each lender sets its own minimum. The calculator treats 1.25 as comfortable coverage and 1.00 as break-even, because below 1.00 the rent does not cover the payment and fewer lenders will go there. Ask the lender for its threshold on your property type.</p>
 </faq>
