@@ -57,7 +57,7 @@ One line each, newest topics at the bottom of each section.
 - Used everywhere: short-term programs from 12.99% plus 2.99 points (standard, per Maurice's brief);
   10.99% plus 1.99 points only as loyalty pricing after two paid-off loans, never as the lead;
   minimum loan $50,000; minimum credit 600; up to 70% of value and 100% of cost; DSCR 30-year fixed,
-  no minimum credit score, up to 80% LTV (75% cash-out), $50,000 to $2 million.
+  no minimum credit score, up to 80% LTV (75% cash-out), up to $2 million per property (the lender's pages conflict on the DSCR minimum: $50,000, $75,000 or $100,000, so no minimum is stated).
 - Removed because the lender's pages conflict or could not be confirmed today: "$50K to $2M" and
   "12 to 24 month" terms on short-term loans, "37 states", minimum after-repair value, the $40,000
   first-timer renovation cap, county caps, the construction "from 8.5%" title, a lending-partner

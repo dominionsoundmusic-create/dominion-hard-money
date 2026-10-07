@@ -38,7 +38,7 @@ statement ("lenders commonly...", with a source).
     three years.
   - Non-owner-occupied investment property only, held in an entity (LLC or corporation).
 * DSCR rental (30-year): no minimum credit score; 30-year fixed; up to 80% LTV on purchase or
-  rate-and-term refinance and up to 75% on cash-out; loan size $50,000 to $2 million per
+  rate-and-term refinance and up to 75% on cash-out; loan size up to $2 million per
   property. Do NOT state a lending-partner DSCR rate (the lender's pages conflict); market
   DSCR rate ranges with a dated source are fine.
 * NOT verifiable today, so remove when presented as the lending partner's term: maximum loan

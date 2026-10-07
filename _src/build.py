@@ -787,6 +787,10 @@ def resolves(path: str) -> bool:
 
 
 def main(argv) -> int:
+    unknown = [a for a in argv if a.startswith("-") and a not in ("--check", "--only")]
+    if unknown:
+        print(__doc__)
+        return 2
     cssv = css_version()
     report, problems, outputs = [], [], []
     index_src = PAGES / "blog" / "index.src.html"
