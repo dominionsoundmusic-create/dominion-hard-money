@@ -14,6 +14,7 @@ Nothing is written until all guards have passed.
 from __future__ import annotations
 
 import html
+import json
 import os
 import re
 import sys
@@ -60,7 +61,7 @@ CTA_BODY = (
     "Submit your deal and get a straightforward review from a team that places "
     "investor financing every day."
 )
-CTA_HREF = SITE
+CTA_HREF = f"{SITE}/apply.html"
 CTA_LABEL = "Submit Your Deal"
 
 ALLOWED_TAGS = {"p", "h2", "h3", "strong", "em", "ul", "ol", "li", "a", "br"}
@@ -493,7 +494,7 @@ def guard_markup(body: str) -> None:
     if re.search(r"(?i)javascript:", body):
         fail("draft body carries a javascript: URL")
     if "<h1" in body.lower():
-        fail("draft body contains an <h1>; the title belongs in the hero <h2>")
+        fail("draft body contains an <h1>; the title is the hero <h1>")
 
 
 # --------------------------------------------------------------------------
@@ -501,19 +502,50 @@ def guard_markup(body: str) -> None:
 # --------------------------------------------------------------------------
 
 
-def skeleton() -> tuple[str, str, str]:
-    """Style, header and footer lifted verbatim from the newest post."""
+def skeleton() -> tuple[str, str, str, str]:
+    """Style, shared head, header and footer lifted verbatim from the newest
+    post, so a new post always matches whatever the site build last wrote."""
     posts = post_files()
     if not posts:
         fail("no existing post to take the skeleton from")
     raw = posts[0][2].read_text(encoding="utf-8")
 
     style = re.search(r"(?is)<style>.*?</style>", raw)
+    shared = re.search(r"(?is)<!-- shared-head -->.*?<!-- /shared-head -->", raw)
     header = re.search(r"(?is)<header>.*?</header>", raw)
     footer = re.search(r"(?is)<footer>.*?</footer>", raw)
     if not (style and header and footer):
         fail(f"could not read the skeleton out of {posts[0][2].name}")
-    return style.group(0), header.group(0), footer.group(0)
+    return style.group(0), (shared.group(0) if shared else ""), header.group(0), footer.group(0)
+
+
+# Photos already in images/ with WebP copies in images/w/ (written by
+# _src/build.py). (file stem, width, height, alt text describing the photo.)
+HERO_POOL = [
+    ("documents-hero", 1536, 640, "A stack of papers and a pen beside a coffee cup on a sunlit desk"),
+    ("rates-hero", 1600, 600, "A calculator, house keys and a small model house on a desk with loan papers"),
+    ("4", 1536, 640, "Aerial view of a long straight street of single-family homes leading toward a bay and skyline"),
+    ("hardmoney-hero", 1600, 600, "A single-story house under renovation with a contractor van in the driveway"),
+    ("dscr-lenders-hero", 1536, 640, "A two-story brick duplex with two front doors and trimmed hedges"),
+    ("flip-hero", 1600, 600, "A freshly renovated two-story house with new landscaping and a for-sale sign"),
+]
+FIGURE_POOL = [
+    ("rehab-in-progress", 1200, 675, "A room mid-renovation with framing exposed, new windows and a ladder"),
+    ("duplex", 1200, 675, "A two-unit brick rental house with two front doors and a small front yard"),
+    ("documents-hero", 1536, 640, "A stack of papers and a pen beside a coffee cup on a sunlit desk"),
+    ("rates-hero", 1600, 600, "A calculator, house keys and a small model house on a desk with loan papers"),
+]
+
+
+def picture(photo: tuple, *, eager: bool, sizes: str, cls: str = "") -> str:
+    stem, w, h, alt = photo
+    widths = [x for x in (480, 800, 1200, 1600) if x < w] + [min(w, 1920)]
+    srcset = ", ".join(f"/images/w/{stem}-{x}.webp {x}w" for x in widths)
+    fallback = next(x for x in widths if x >= 800)
+    load = 'fetchpriority="high" decoding="async"' if eager else 'loading="lazy" decoding="async"'
+    c = f' class="{cls}"' if cls else ""
+    return (f'<img{c} src="/images/w/{stem}-{fallback}.webp" srcset="{srcset}" sizes="{sizes}" '
+            f'width="{w}" height="{h}" {load} alt="{html.escape(alt, quote=True)}">')
 
 
 def slugify(raw: str) -> str:
@@ -525,7 +557,7 @@ def slugify(raw: str) -> str:
 
 
 def render_post(fields: dict, slug: str, ts: int) -> str:
-    style, header, footer = skeleton()
+    style, shared, header, footer = skeleton()
     published = datetime.fromtimestamp(ts / 1000, tz=timezone.utc)
     pubdate = f"{published:%B} {published.day}, {published.year}"
     # quote=False in text contexts so apostrophes stay literal, the way the
@@ -533,10 +565,31 @@ def render_post(fields: dict, slug: str, ts: int) -> str:
     # keeps the quote escaping.
     title = html.escape(fields["TITLE"], quote=False)
     canonical = f"{SITE}/blog/{slug}-{ts}.html"
-    body = "\n".join(
+    hero = HERO_POOL[(ts // 1000) % len(HERO_POOL)]
+    figs = [p for p in FIGURE_POOL if p[0] != hero[0]]
+    fig1, fig2 = figs[(ts // 1000) % len(figs)], figs[((ts // 1000) + 1) % len(figs)]
+    lines = [
         ("  " + line.strip() if line.strip() else "")
         for line in fields["BODY"].strip().splitlines()
-    )
+    ]
+    # Two in-body photos: after the second paragraph and before the last heading.
+    paras = [i for i, l in enumerate(lines) if l.strip().startswith("<p")]
+    heads = [i for i, l in enumerate(lines) if l.strip().startswith("<h2")]
+    sizes = "(min-width: 760px) 736px, 100vw"
+    at1 = paras[1] + 1 if len(paras) > 1 else len(lines)
+    at2 = heads[-1] if heads and heads[-1] > at1 else len(lines)
+    lines.insert(at2, f'  <figure class="pic">{picture(fig2, eager=False, sizes=sizes)}</figure>')
+    lines.insert(at1, f'  <figure class="pic">{picture(fig1, eager=False, sizes=sizes)}</figure>')
+    body = "\n".join(lines)
+    crumbs = json.dumps({
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": f"{SITE}/blog/"},
+            {"@type": "ListItem", "position": 3, "name": fields["TITLE"]},
+        ],
+    }, ensure_ascii=False)
+    meta = html.escape(fields["META"], quote=True)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -544,19 +597,23 @@ def render_post(fields: dict, slug: str, ts: int) -> str:
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} | Dominion Hard Money</title>
-<meta name="description" content="{html.escape(fields["META"], quote=True)}">
+<meta name="description" content="{meta}">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="{canonical}">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Dominion Hard Money"><meta property="og:title" content="{html.escape(fields["TITLE"], quote=True)}"><meta property="og:description" content="{meta}"><meta property="og:url" content="{canonical}"><meta property="og:image" content="{SITE}/images/w/{hero[0]}-1200.webp"><meta name="twitter:card" content="summary_large_image">
+{shared}
 {style}
+<script type="application/ld+json">{crumbs}</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 {header}
-<div class="hero">
-<h2>{title}</h2>
-<div class="meta">Published {pubdate} &bull; Dominion Hard Money</div>
-</div>
-<div class="content">
-<a href="/blog" class="back">&larr; Back to Blog</a>
+<section class="hero">{picture(hero, eager=True, sizes="100vw", cls="hero-bg")}<div class="hero-in container"><div class="hero-copy"><nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li aria-current="page">{title}</li></ol></nav>
+<h1>{title}</h1>
+<p class="byline">Published {pubdate} &bull; Dominion Hard Money</p>
+<div class="ctas"><a class="btn" href="/apply.html">Get your deal reviewed</a><a class="btn ghost" href="/blog/">More from the blog</a></div></div></div></section>
+<main id="main"><section class="legacy"><div class="content">
+<a href="/blog/" class="back">&larr; Back to Blog</a>
 <article class="blog-post">
 
 {body}
@@ -571,7 +628,7 @@ def render_post(fields: dict, slug: str, ts: int) -> str:
 
 </article>
 
-</div>
+</div></section></main>
 {footer}
 </body>
 </html>
@@ -609,7 +666,7 @@ def rebuild_index(new_blurbs: dict[str, str]) -> str:
         entries.append(f'<div class="post"><a href="{url}">{title}</a><p>{blurb}</p></div>')
 
     rebuilt, count = re.subn(
-        r'(?s)(<p class="lede">.*?</p>)(.*?)(</div><footer>)',
+        r"(?s)(<!--posts-->)(.*?)(<!--/posts-->)",
         lambda m: m.group(1) + "".join(entries) + m.group(3),
         raw,
         count=1,

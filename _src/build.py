@@ -557,6 +557,11 @@ def render(src: Path, cssv: str, report: list) -> tuple[str, str]:
         src_html = sources_block(st)
         st.decompose()
 
+    gold_custom = ""
+    gb = soup.find("gold-band")
+    if gb:
+        gold_custom = f'<section class="break gold"{(" id=" + chr(34) + gb["id"] + chr(34)) if gb.get("id") else ""}><div class="col">{"".join(str(c) for c in gb.contents)}</div></section>'
+        gb.decompose()
     has_form = soup.find("deal-form") is not None
     form = form_html(fm) if has_form else ""
     df = soup.find("deal-form")
@@ -612,7 +617,9 @@ def render(src: Path, cssv: str, report: list) -> tuple[str, str]:
     if not fm.get("no_breaks"):
         blocks.insert(nav_at, navy_break(fm, has_form))
     main = '<main id="main">' + "".join(blocks)
-    if not fm.get("no_breaks") or has_form:
+    if gold_custom:
+        main += gold_custom
+    elif not fm.get("no_breaks") or has_form:
         main += gold_break(fm, has_form, form)
     main += faq_html + src_html
     if fm.get("show_disclosure", "yes") != "no":
@@ -742,10 +749,17 @@ def check(rel: str, doc: str, r: dict, problems: list):
             continue
         if not resolves(path):
             problems.append(f"{rel}: broken link {a['href']}")
+    faqsec = soup.find(id="faq")
+    if faqsec is not None:
+        qs = {re.sub(r"\W+", " ", h.get_text()).strip().lower() for h in faqsec.find_all("h3")}
+        for h in body.find_all(["h3", "h4"]):
+            if h.find_parent(id="faq") is None and re.sub(r"\W+", " ", h.get_text()).strip().lower() in qs:
+                problems.append(f"{rel}: FAQ question repeated in the body: {h.get_text()[:60]!r}")
     low = txt.lower()
     for phrase in ("we lend", "our loans", "we fund", "guaranteed", "approval in", "licensed broker", "we are licensed"):
-        if phrase in low:
-            i = low.find(phrase)
+        mm = re.search(r"\b" + re.escape(phrase) + r"\b", low)
+        if mm:
+            i = mm.start()
             problems.append(f"{rel}: phrase {phrase!r}: ...{txt[max(0, i - 60):i + 60]!r}")
 
 
@@ -777,16 +791,21 @@ def main(argv) -> int:
     report, problems, outputs = [], [], []
     index_src = PAGES / "blog" / "index.src.html"
     prev_index = (ROOT / "blog" / "index.html").read_text(encoding="utf-8") if (ROOT / "blog" / "index.html").exists() else ""
+    only = None
+    if "--only" in argv:
+        only = argv[argv.index("--only") + 1].split(",")
     for src in sorted(PAGES.rglob("*.src.html")):
         if src == index_src:
+            continue
+        if only is not None and not any(out_rel(src).startswith(o.strip("/")) or out_rel(src) == o for o in only):
             continue
         rel, doc = render(src, cssv, report)
         (ROOT / rel).parent.mkdir(parents=True, exist_ok=True)
         (ROOT / rel).write_text(doc, encoding="utf-8")
         outputs.append((rel, doc))
     # Blog index last, so it sees every post on disk.
-    if index_src.exists():
-        text = index_src.read_text(encoding="utf-8").replace("<!--posts-->", "<!--posts-->" + blog_entries(prev_index), 1)
+    if index_src.exists() and (only is None or "blog/index.html" in only):
+        text = index_src.read_text(encoding="utf-8").replace("<!--posts--><!--/posts-->", "<!--posts-->" + blog_entries(prev_index) + "<!--/posts-->", 1)
         tmp = PAGES / "blog" / ".index.tmp.src.html"
         tmp.write_text(text, encoding="utf-8")
         try:
@@ -796,7 +815,8 @@ def main(argv) -> int:
         report[-1]["rel"] = "blog/index.html"
         (ROOT / "blog" / "index.html").write_text(doc, encoding="utf-8")
         outputs.append(("blog/index.html", doc))
-    write_sitemap(report)
+    if only is None:
+        write_sitemap(report)
     print(f"built {len(outputs)} pages")
     if "--check" in argv:
         for (rel, doc), r in zip(outputs, report):

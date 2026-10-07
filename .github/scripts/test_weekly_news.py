@@ -226,8 +226,11 @@ class TestAntiSameness(Base):
         self.assertSkipped(SLUG="national-flipping-returns-rose-texas-did-not")
 
     def test_topic_restating_a_recent_title_is_rejected(self):
-        self.assertSkipped(TOPIC="common reasons hard money deals fall through")
-        self.assertSkipped(TOPIC="calculating ARV and the maximum allowable offer formula")
+        # Built from whatever the recent posts are on disk, so the test does
+        # not go stale as new posts push older ones out of the lookback.
+        for post in self.mod.recent_posts():
+            with self.subTest(title=post["title"]):
+                self.assertSkipped(TOPIC=post["title"].lower())
 
     def test_topic_already_covered_by_an_opening_is_rejected(self):
         self.assertSkipped(
@@ -397,6 +400,15 @@ class TestRendering(Base):
                 re.search(pattern, ref).group(0),
                 re.search(pattern, self.html).group(0),
             )
+
+    def test_every_image_in_the_post_exists(self):
+        imgs = " ".join(re.findall(r"<img\b[^>]*>", self.html))
+        for src in re.findall(r'(?:src|srcset)="([^"]+)"', imgs):
+            for part in src.split(","):
+                url = part.strip().split(" ")[0]
+                if url.startswith("/"):
+                    with self.subTest(url=url):
+                        self.assertTrue((REPO / url.lstrip("/")).is_file(), url)
 
     def test_apostrophes_stay_literal_in_text(self):
         self.assertNotIn("&#x27;", self.html)
