@@ -327,7 +327,7 @@ def footer_html() -> str:
         f'<div class="fcols">{"".join(cols)}</div>'
         '<div class="legal">'
         f'<p>{DISCLOSURE} All loans are for business purposes only and secured by non-owner-occupied investment property, held in a business entity. '
-        'Not a commitment to lend. All loans subject to underwriting, property review, and approval by the lender. Rates and terms vary by deal and borrower profile and are subject to change without notice.</p>'
+        'Not a commitment to lend. All loans subject to underwriting, property review, and approval by the lender. Rates and terms vary by deal and borrower profile and are subject to change without notice. The 12.99% plus 2.99 points figure is the lending partner\'s standard starting price for short-term loans; the lender adjusts final pricing after underwriting for credit, loan size and experience.</p>'
         '<p>Not available in all states. Not available in Nevada, Utah, South Dakota, or Vermont. Loans in California, Oregon, Idaho, Arizona, North Dakota, Minnesota, New York, New Jersey, and North Carolina are subject to additional licensing requirements. '
         'Rate and fee information is provided for general informational purposes only. Equal housing opportunity.</p>'
         f'<p>&copy; {date.today().year} Dominion Hard Money, a Dominion Digital Group brand &middot; dominionhardmoney.com</p>'

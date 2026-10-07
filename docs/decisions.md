@@ -56,8 +56,13 @@ One line each, newest topics at the bottom of each section.
   fix-and-flip and DSCR pages once and confirm the list below.
 - Used everywhere: short-term programs from 12.99% plus 2.99 points (standard, per Maurice's brief);
   10.99% plus 1.99 points only as loyalty pricing after two paid-off loans, never as the lead;
-  minimum loan $50,000; minimum credit 600; up to 70% of value and 100% of cost; DSCR 30-year fixed,
-  no minimum credit score, up to 80% LTV (75% cash-out), up to $2 million per property (the lender's pages conflict on the DSCR minimum: $50,000, $75,000 or $100,000, so no minimum is stated).
+  minimum loan $50,000; minimum credit 600; up to 70% of value and 100% of cost; DSCR no minimum
+  credit score, $75,000 to $2 million, up to 80% LTV.
+- Oct 7 2026, after Maurice had Chrome read cogocapital.com/loan-programs and the 2026 underwriting
+  guidelines PDF (v1.0, effective May 25 2026): DSCR "30-year fixed" and "75% on a cash-out" were
+  removed site-wide (nothing the lender publishes supports either); "per property" was removed from the
+  $2 million DSCR limit and the published $75,000 minimum added; the footer on every page now says
+  12.99% plus 2.99 points is standard starting pricing that the lender adjusts after underwriting.
 - Removed because the lender's pages conflict or could not be confirmed today: "$50K to $2M" and
   "12 to 24 month" terms on short-term loans, "37 states", minimum after-repair value, the $40,000
   first-timer renovation cap, county caps, the construction "from 8.5%" title, a lending-partner
