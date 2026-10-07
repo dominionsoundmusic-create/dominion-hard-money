@@ -1,0 +1,167 @@
+[
+ {
+  "page": "dscr-loans/",
+  "target_keyword": "dscr loans",
+  "supporting_keywords": [
+   "dscr loan",
+   "dscr mortgage",
+   "debt service coverage ratio loan",
+   "dscr loan for rental property",
+   "no income verification rental loan"
+  ],
+  "ubersuggest_priority": "high",
+  "changes": "Lending-partner terms corrected (no min credit, 30-yr fixed, $50K to $2M, 80%/75% LTV), Oct 2026 rates, 8 FAQs trimmed to 6, sources added, cta2 to requirements",
+  "removed_unverifiable": [
+   "lending-partner DSCR rate 'from 5.99%'",
+   "$75,000 minimum",
+   "origination from 1.5%",
+   "cross-collateral/portfolio terms",
+   "2-4 unit and condo 75% LTV cap as universal",
+   "70% rural cash-out cap",
+   "'searched more than every other kind of investor financing' claim",
+   "September 2026 DSCR ranges (replaced with dated Oct 2026 source)"
+  ],
+  "sources_added": 5
+ },
+ {
+  "page": "what-is-a-dscr-loan/",
+  "target_keyword": "what is a dscr loan",
+  "supporting_keywords": [
+   "dscr loan meaning",
+   "what does dscr stand for",
+   "dscr mortgage explained",
+   "are dscr loans a good idea",
+   "dscr vs hard money"
+  ],
+  "ubersuggest_priority": "medium",
+  "changes": "Removed duplicate in-body FAQ, rewrote lending-partner program block to approved terms, short hero line, 5 FAQs, sources added",
+  "removed_unverifiable": [
+   "lending-partner rate from 5.99%",
+   "$75,000 minimum",
+   "origination from 1.5%",
+   "cross-collateral terms",
+   "partner property-type list"
+  ],
+  "sources_added": 3
+ },
+ {
+  "page": "dscr-loan-rates/",
+  "target_keyword": "dscr loan rates",
+  "supporting_keywords": [
+   "dscr rates today",
+   "dscr mortgage rates 2026",
+   "dscr loan interest rates",
+   "dscr prepayment penalty",
+   "dscr vs conventional investment rates"
+  ],
+  "ubersuggest_priority": "high",
+  "changes": "Updated benchmark to Freddie Mac 7.28% (Oct 1 2026) and dated Oct 2026 DSCR range 6.88% to 8.50%, removed partner DSCR rate, removed duplicate body FAQ, 6 FAQs, sources",
+  "removed_unverifiable": [
+   "lending-partner DSCR rate 5.99% and 1.5 points",
+   "partner 1.20/1.00 ratio guidelines",
+   "partner ARM-only in some states",
+   "'low 6s to mid 7s' September range",
+   "'worth more than a point' credit claim"
+  ],
+  "sources_added": 6
+ },
+ {
+  "page": "dscr-loan-requirements/",
+  "target_keyword": "dscr loan requirements",
+  "supporting_keywords": [
+   "dscr loan credit score",
+   "dscr loan down payment",
+   "dscr reserves",
+   "dscr ratio requirement",
+   "dscr loan llc"
+  ],
+  "ubersuggest_priority": "high",
+  "changes": "Partner program rewritten to approved terms, credit/reserve ranges softened to verifiable wording, duplicate body FAQ removed, 6 FAQs, sources",
+  "removed_unverifiable": [
+   "partner rate 5.99% and 1.5 points",
+   "$75,000 minimum",
+   "partner 1.20/1.00 ratio guideline",
+   "partner property-type list",
+   "'2 to 12 months' reserves range"
+  ],
+  "sources_added": 4
+ },
+ {
+  "page": "dscr-loan-lenders/",
+  "target_keyword": "dscr loan lenders",
+  "supporting_keywords": [
+   "dscr lenders",
+   "best dscr lenders",
+   "dscr lender no minimum credit score",
+   "dscr prepayment penalty comparison",
+   "how to choose a dscr lender"
+  ],
+  "ubersuggest_priority": "high",
+  "changes": "Market section updated to Oct 2026, partner section rewritten (12.99% + 2.99 standard first, 10.99% as loyalty only), US spelling, hero alt fixed, duplicate body FAQ removed, sources",
+  "removed_unverifiable": [
+   "partner DSCR rate 5.99%",
+   "$75,000 minimum",
+   "cross-collateral",
+   "construction from 8.5%",
+   "commercial to $5 million",
+   "rate-match offer",
+   "DSCR closing times 2 to 3 weeks",
+   "'a third of non-QM volume' statistic",
+   "'quarter to half point' penalty pricing",
+   "Griffin Sept 2026 rates"
+  ],
+  "sources_added": 4
+ },
+ {
+  "page": "dscr-loan-no-money-down/",
+  "target_keyword": "dscr loan no money down",
+  "supporting_keywords": [
+   "zero down dscr loan",
+   "dscr loan down payment",
+   "brrrr dscr refinance",
+   "dscr gift funds",
+   "dscr heloc down payment"
+  ],
+  "ubersuggest_priority": "medium",
+  "changes": "Worked examples kept with approved partner terms, partner-specific guideline figures removed or turned into 'confirm with the lender', duplicate body FAQ removed, sources",
+  "removed_unverifiable": [
+   "$40,000 rehab cap",
+   "$100,000 minimum ARV",
+   "$15,000 reserve requirement",
+   "30% ownership guarantor rule",
+   "partner 1.20/1.00 ratio guideline",
+   "partner cross-collateral",
+   "partner DSCR rate 5.99% and 1.5 to 2.99 points",
+   "$75,000 DSCR minimum"
+  ],
+  "sources_added": 3
+ },
+ {
+  "page": "landlord-costs-by-state/",
+  "target_keyword": "landlord costs by state",
+  "supporting_keywords": [
+   "rental property carrying costs",
+   "property tax on rental property by state",
+   "landlord insurance cost by state",
+   "cost to own a rental property",
+   "rental property expenses by state"
+  ],
+  "ubersuggest_priority": "medium",
+  "changes": "Fixed wrong lede (was hard money copy), title/description dashes, updated CT/VA/WA/MD/MA facts, removed in-body FAQ section, 5 FAQs, 23 sources, inline tint box replaced with callout",
+  "removed_unverifiable": [
+   "Florida $7,136 vs $2,543 insurance figures",
+   "Harris County 2.1% to 2.4%",
+   "Franklin County 1.67%",
+   "Baltimore City 1.72%",
+   "Texas $3,500 insurance and Houston flood $1,500 to $4,000",
+   "Colorado split assessment rate",
+   "'rates lag grand list by two years' (wrong)",
+   "2026 federal institutional-investor duplex definition FAQ",
+   "Ohio 32% valuation example",
+   "WA single-family exemption (wrong; corrected)",
+   "Henrico $0.85 (corrected to $0.83)",
+   "Maryland 90-day rule (corrected to 30-day MDE / 60-day Baltimore license)"
+  ],
+  "sources_added": 23
+ }
+]

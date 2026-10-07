@@ -1,0 +1,156 @@
+[
+ {
+  "page": "hard-money-loans/",
+  "target_keyword": "hard money loans",
+  "supporting_keywords": [
+   "hard money loan types",
+   "hard money loans for investors",
+   "hard money loan cost",
+   "who qualifies for a hard money loan",
+   "fix and flip hard money loans"
+  ],
+  "ubersuggest_priority": "high",
+  "changes": "REPAIR: new title, h1, lede, crumbs, hero; body rebuilt from the live page with partner terms table (12.99% + 2.99 standard), 6 FAQs, sources",
+  "removed_unverifiable": [
+   "10 to 14% / 2 to 4 points ranges",
+   "up to 90% of cost, 70-75% ARV",
+   "DSCR 6 to 8% with 1.5 to 3 points as lender terms",
+   "construction 8.5 to 12%, 12 to 24 months",
+   "7 to 21 day closing",
+   "property within 45 to 60 minutes of a 200,000-person metro",
+   "trust as borrower entity"
+  ],
+  "sources_added": 4
+ },
+ {
+  "page": "hard-money-lender/",
+  "target_keyword": "hard money lender",
+  "supporting_keywords": [
+   "what does a hard money lender do",
+   "how to work with a hard money lender",
+   "hard money lender requirements",
+   "hard money term sheet",
+   "hard money lender red flags"
+  ],
+  "ubersuggest_priority": "high",
+  "changes": "REPAIR: restored the page's own body (coordinator's recovered body was the private-money-lender copy appended to the live file); new head, hero, term-sheet-to-payoff section, 5 FAQs, sources",
+  "removed_unverifiable": [
+   "37 states",
+   "40 to 47 states coverage",
+   "metro 200,000 / 45 to 60 minute location rule",
+   "65 to 75% as-is / 70 to 85% ARV market caps",
+   "10 to 14% / 2 to 4 points",
+   "600 to 650 market minimum"
+  ],
+  "sources_added": 4
+ },
+ {
+  "page": "real-estate-investor-loans/",
+  "target_keyword": "real estate investor loans",
+  "supporting_keywords": [
+   "investment property loans for investors",
+   "loans for real estate investors",
+   "DSCR vs hard money",
+   "fix and flip vs bridge loan",
+   "Fannie Mae 10 financed properties"
+  ],
+  "ubersuggest_priority": "high",
+  "changes": "REPAIR: new head and hero; strategy-to-loan table, partner terms, ATTOM Q2 2026 flip margins, Fannie Mae limits and HomeStyle, 5 FAQs, sources",
+  "removed_unverifiable": [
+   "90% of purchase plus 100% rehab, 70 to 85% ARV",
+   "construction 8.5 to 12%, 650+, 12 to 24 months",
+   "DSCR 5 to 30 year terms",
+   "no limit on properties (now: lender-set exposure limits)",
+   "conventional investor 7 to 8% and 30 to 60 days",
+   "zero-down does not exist claim"
+  ],
+  "sources_added": 6
+ },
+ {
+  "page": "rehab-loans/",
+  "target_keyword": "rehab loans",
+  "supporting_keywords": [
+   "rehab loan draws",
+   "investment property rehab loan",
+   "scope of work for rehab loan",
+   "rehab loan vs 203k",
+   "renovation contingency budget"
+  ],
+  "ubersuggest_priority": "medium",
+  "changes": "REPAIR: new head and hero; partner rehab terms, 203(k)/HomeStyle comparison, HUD 10 to 20% contingency benchmark, scope example fixed to add up, 5 FAQs, sources",
+  "removed_unverifiable": [
+   "4 to 6 draws",
+   "draw release within 3 to 5 business days",
+   "70 to 85% ARV market cap",
+   "6 to 12 month term",
+   "licensed contractor wording"
+  ],
+  "sources_added": 5
+ },
+ {
+  "page": "private-money-lender/",
+  "target_keyword": "private money lender",
+  "supporting_keywords": [
+   "private money lending",
+   "private lender vs bank",
+   "private money vs hard money",
+   "private money loan cost",
+   "is private money lending legal"
+  ],
+  "ubersuggest_priority": "high",
+  "changes": "REPAIR: own h1, lede, crumbs, hero; comparison table, regulation section (Reg Z, state licensing, NMLS), Fannie Mae limit, 6 FAQs, sources; IRA and finding content left to private-money-lenders-near-me",
+  "removed_unverifiable": [
+   "37 states",
+   "7 to 21 day closing",
+   "10 to 14% / 2 to 4 points",
+   "legal in all 50 states as commercial transaction",
+   "$100 to $500 application fee norm",
+   "10.99% as headline"
+  ],
+  "sources_added": 6
+ },
+ {
+  "page": "what-is-a-hard-money-loan/",
+  "target_keyword": "what is a hard money loan",
+  "supporting_keywords": [
+   "hard money loan meaning",
+   "how does a hard money loan work",
+   "LTV vs ARV vs LTC",
+   "hard money loan on primary residence",
+   "hard money balloon payment"
+  ],
+  "ubersuggest_priority": "medium",
+  "changes": "Updated cost table (7.28% Freddie Mac, 6 to 18 month terms), standard pricing first, Reg Z section corrected, new hero and in-body photos, FAQs cut 8 to 6, sources added",
+  "removed_unverifiable": [
+   "construction from 8.5%, $100k to $3M, 650, 85% ARV",
+   "second-position 12 to 14%",
+   "3 month reserves",
+   "1 to 2 point extensions",
+   "3 to 14 day closing",
+   "terms to twelve months",
+   "65 to 80% LTV and 10 to 30% down"
+  ],
+  "sources_added": 4
+ },
+ {
+  "page": "what-is-hard-money-financing/",
+  "target_keyword": "what is hard money financing",
+  "supporting_keywords": [
+   "hard money financing",
+   "how hard money financing works",
+   "rehab holdback",
+   "business purpose loan Regulation Z",
+   "hard money loan structure"
+  ],
+  "ubersuggest_priority": "low",
+  "changes": "Shorter lede/description, removed lending-partner term/extension/guarantor claims, standard pricing before loyalty, removed duplicate body FAQ, sources added",
+  "removed_unverifiable": [
+   "nine-month standard term",
+   "three-month extension",
+   "18-month maximum",
+   "program page up to twelve months",
+   "30% owners personally guarantee"
+  ],
+  "sources_added": 4
+ }
+]
