@@ -1,0 +1,45 @@
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Books by Maurice Johnson",
+  "itemListElement": [
+   {
+    "@type": "Book",
+    "position": 1,
+    "name": "The Landlord's Cost Map",
+    "author": {
+     "@type": "Person",
+     "name": "Maurice Johnson"
+    }
+   },
+   {
+    "@type": "Book",
+    "position": 2,
+    "name": "The Small Landlord's Field Guide to the ROAD to Housing Act",
+    "author": {
+     "@type": "Person",
+     "name": "Maurice Johnson"
+    }
+   },
+   {
+    "@type": "Book",
+    "position": 3,
+    "name": "The Owner's Field Guide to the 2027 Condo Financing Rules",
+    "author": {
+     "@type": "Person",
+     "name": "Maurice Johnson"
+    }
+   },
+   {
+    "@type": "Book",
+    "position": 4,
+    "name": "The Refrigerant Changeover",
+    "author": {
+     "@type": "Person",
+     "name": "Maurice Johnson"
+    }
+   }
+  ]
+ }
+]
