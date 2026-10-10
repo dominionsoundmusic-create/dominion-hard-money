@@ -22,6 +22,9 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+# Google Analytics 4 (Oct 10 2026), the same tag every other page on the site carries
+GA4_TAG = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag(\'js\',new Date());gtag(\'config\',\'G-GZZ9Y7Y0P5\');document.addEventListener(\'click\',function(e){var a=e.target.closest&&e.target.closest(\'a[href^="tel:"]\');if(a){gtag(\'event\',\'phone_call_click\',{phone_number:a.getAttribute(\'href\').slice(4),link_url:location.pathname});}},true);</script>\n'
+
 REPO = Path(__file__).resolve().parents[2]
 BLOG = REPO / "blog"
 INDEX = BLOG / "index.html"
@@ -604,7 +607,7 @@ def render_post(fields: dict, slug: str, ts: int) -> str:
 {shared}
 {style}
 <script type="application/ld+json">{crumbs}</script>
-</head>
+{GA4_TAG}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 {header}
