@@ -338,6 +338,10 @@ def footer_html() -> str:
 SHARED_STYLE = "<style>:root{color-scheme:light}</style>"
 
 
+# Google Analytics 4 (Oct 10 2026), with phone-tap tracking; same tag as every other page on the site
+GA4_TAG = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag(\'js\',new Date());gtag(\'config\',\'G-GZZ9Y7Y0P5\');document.addEventListener(\'click\',function(e){var a=e.target.closest&&e.target.closest(\'a[href^="tel:"]\');if(a){gtag(\'event\',\'phone_call_click\',{phone_number:a.getAttribute(\'href\').slice(4),link_url:location.pathname});}},true);</script>\n'
+
+
 def head_html(fm, rel, ld, hero_src, page_css, cssv) -> str:
     url = fm.get("canonical") or url_of(rel)
     title = fm["title"]
@@ -371,7 +375,7 @@ def head_html(fm, rel, ld, hero_src, page_css, cssv) -> str:
         f'<link rel="stylesheet" href="/assets/site.css?v={cssv}">'
         f'<script src="/assets/site.js?v={cssv}" defer></script>'
         '<!-- /shared-head -->\n'
-        f'{SHARED_STYLE}\n{pre}{page_css}{lds}\n</head>\n'
+        f'{SHARED_STYLE}\n{pre}{page_css}{lds}\n' + GA4_TAG + '</head>\n'
     )
 
 
