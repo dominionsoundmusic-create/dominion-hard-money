@@ -305,6 +305,9 @@ def css_version() -> str:
     return hashlib.md5((ROOT / "assets" / "site.css").read_bytes() + (ROOT / "assets" / "site.js").read_bytes()).hexdigest()[:8]
 
 
+SITE_CSS = (ROOT / "assets" / "site.css").read_text().replace("</style", "<\\/style")
+
+
 def header_html() -> str:
     links = "".join(f'<a href="{u}">{t}</a>' for u, t in NAV)
     return (
@@ -344,7 +347,7 @@ SHARED_STYLE = "<style>:root{color-scheme:light}</style>"
 
 
 # Google Analytics 4 (Oct 10 2026), with phone-tap tracking; same tag as every other page on the site
-GA4_TAG = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag(\'js\',new Date());gtag(\'config\',\'G-GZZ9Y7Y0P5\');document.addEventListener(\'click\',function(e){var a=e.target.closest&&e.target.closest(\'a[href^="tel:"]\');if(a){gtag(\'event\',\'phone_call_click\',{phone_number:a.getAttribute(\'href\').slice(4),link_url:location.pathname});}},true);</script>\n'
+GA4_TAG = '<script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag(\'js\',new Date());gtag(\'config\',\'G-GZZ9Y7Y0P5\');document.addEventListener(\'click\',function(e){var a=e.target.closest&&e.target.closest(\'a[href^="tel:"]\');if(a){gtag(\'event\',\'phone_call_click\',{phone_number:a.getAttribute(\'href\').slice(4),link_url:location.pathname});}},true);</script>\n'
 
 
 def head_html(fm, rel, ld, hero_src, page_css, cssv) -> str:
@@ -377,7 +380,7 @@ def head_html(fm, rel, ld, hero_src, page_css, cssv) -> str:
         '<!-- shared-head -->'
         '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="/apple-touch-icon.png">'
         '<link rel="preload" href="/assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>'
-        f'<link rel="stylesheet" href="/assets/site.css?v={cssv}">'
+        f'<style id="site-css">{SITE_CSS}</style>'
         f'<script src="/assets/site.js?v={cssv}" defer></script>'
         '<!-- /shared-head -->\n'
         f'{SHARED_STYLE}\n{pre}{page_css}{lds}\n' + GA4_TAG + '</head>\n'
