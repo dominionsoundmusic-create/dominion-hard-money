@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/maryland-hero-480.webp 480w, /images/w/maryland-hero-800.webp 800w, /images/w/maryland-hero-1200.webp 1200w, /images/w/maryland-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "States", "item": "https://dominionhardmoney.com/states.html"}, {"@type": "ListItem", "position": 3, "name": "Maryland"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I get a hard money loan for a Baltimore rowhouse flip?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our lending partners review non-owner-occupied investment property in Baltimore City, Baltimore County, the Washington suburbs and the rest of Maryland, held in an LLC or corporation. Plan the lead work, the license and the closing taxes into the budget, and the lender decides each deal."}}, {"@type": "Question", "name": "Can I close before the lead certificate is in hand?", "acceptedAnswer": {"@type": "Answer", "text": "Closing and compliance are separate. You can buy the property, but a pre-1978 unit has to be registered and pass the lead inspection before a tenant moves in, and in Baltimore City it needs the rental license too. Plan the loan term around the later of those, not the closing date."}}, {"@type": "Question", "name": "How much are transfer taxes on a Baltimore City flip?", "acceptedAnswer": {"@type": "Answer", "text": "The state transfer tax is 0.5 percent, the city transfer tax 1.5 percent and the recordation tax $5 per $500, about 1 percent. Together that is about 3 percent of the price, split by contract and custom, and a flip meets it at both the purchase and the sale."}}, {"@type": "Question", "name": "Why will my tax bill be higher than the seller's?", "acceptedAnswer": {"@type": "Answer", "text": "The Homestead Tax Credit, which caps annual assessment increases, applies only to an owner's principal residence. A rental pays on the full assessment, and in Baltimore City the rate is $2.248 per $100 for fiscal 2026."}}, {"@type": "Question", "name": "How much security deposit can a Maryland landlord take?", "acceptedAnswer": {"@type": "Answer", "text": "One month's rent, since the Renters' Rights and Stabilization Act of 2024 took effect on October 1, 2024. Before that the cap was two months."}}, {"@type": "Question", "name": "How long does an eviction for unpaid rent take to start in Maryland?", "acceptedAnswer": {"@type": "Answer", "text": "The landlord must first give written notice and wait 10 days for the tenant to pay before filing a failure-to-pay-rent case in District Court."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

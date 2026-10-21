@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,6 +268,11 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
 </style><script src="/assets/site.js?v=1fdf2e34" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/michigan-hero-480.webp 480w, /images/w/michigan-hero-800.webp 800w, /images/w/michigan-hero-1200.webp 1200w, /images/w/michigan-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Illinois", "item": "https://dominionhardmoney.com/hard-money-lenders/illinois/"}, {"@type": "ListItem", "position": 3, "name": "Chicago"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much do hard money lenders in Chicago charge?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partner's standard pricing on fix and flip and bridge loans begins at 12.99 percent interest plus 2.99 points, interest only. Lower loyalty pricing applies only after two loans have been paid off with the lender. In Chicago, also budget the city's buyer transfer tax of $3.75 per $500 of the price."}}, {"@type": "Question", "name": "How much cash do I need for a Chicago hard money loan?", "acceptedAnswer": {"@type": "Answer", "text": "More than in most markets. Chicago is in Cook County, where our lending partner caps leverage at 50 percent of value, so the usual 70 percent of after-repair value does not apply. Plan to bring the rest of the cost yourself, plus closing costs and at least $15,000 in reserves."}}, {"@type": "Question", "name": "Do hard money lenders check credit?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partner does. Fix and flip and bridge loans need a minimum credit score of 600. The DSCR rental program has no minimum credit score, because it qualifies on the property's rent, but the lender still reviews the file."}}, {"@type": "Question", "name": "Is hard money lending legal in Illinois?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Hard money is private, business-purpose lending secured by investment real estate. Our lending partner finances non-owner-occupied investment property held in an LLC, corporation or trust, not a home you will live in. Dominion Hard Money does not lend its own funds."}}, {"@type": "Question", "name": "Are hard money loans dangerous?", "acceptedAnswer": {"@type": "Answer", "text": "They carry more risk than a bank mortgage because they are short-term, interest-only and priced higher. The danger is running out of cash or time. In Cook County, where leverage is capped at 50 percent, a realistic budget, reserves and a clear exit matter even more."}}]}</script>

@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,6 +268,11 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
 </style><script src="/assets/site.js?v=1fdf2e34" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/2-480.webp 480w, /images/w/2-800.webp 800w, /images/w/2-1200.webp 1200w, /images/w/2-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Florida", "item": "https://dominionhardmoney.com/hard-money-lenders/florida/"}, {"@type": "ListItem", "position": 3, "name": "Miami"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much do hard money lenders in Miami charge?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partner's standard pricing on fix and flip and bridge loans begins at 12.99 percent interest plus 2.99 points, interest only. Lower loyalty pricing applies only after two loans have been paid off with the lender. Budget for Miami-Dade's loan taxes too: 35 cents per $100 on the mortgage plus a 0.2 percent intangible tax."}}, {"@type": "Question", "name": "Do hard money lenders require a down payment in Miami?", "acceptedAnswer": {"@type": "Answer", "text": "Often less than a bank, but rarely nothing. The loan can cover up to 100 percent of cost but no more than 70 percent of the after-repair value, so on many Miami deals the 70 percent cap decides how much cash you bring. Borrowers also generally need at least $15,000 in reserves."}}, {"@type": "Question", "name": "Can I get a hard money loan on a Miami condo?", "acceptedAnswer": {"@type": "Answer", "text": "Condos are an eligible property type in our lending partner's guidelines, for non-owner-occupied investment use. Expect the building to be reviewed with the deal, so have the association's recertification status, milestone inspection, reserve study and any special assessments ready."}}, {"@type": "Question", "name": "What closing taxes will I pay on a Miami-Dade purchase?", "acceptedAnswer": {"@type": "Answer", "text": "Deed stamps in Miami-Dade are 60 cents per $100, plus a 45 cent per $100 surtax unless the property is a single-family residence, which includes a condo unit. The loan adds 35 cents per $100 and a 0.2 percent intangible tax. Your contract sets who pays the deed stamps."}}, {"@type": "Question", "name": "Can I use a DSCR loan on a Miami Beach vacation rental?", "acceptedAnswer": {"@type": "Answer", "text": "Check two things first. Miami Beach has long restricted short-term rentals in residential neighborhoods, and many condo associations ban them, so confirm the rule for the exact address. DSCR lenders also commonly qualify on long-term rent, so get written confirmation before counting nightly income."}}]}</script>

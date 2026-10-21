@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/colorado-hero-480.webp 480w, /images/w/colorado-hero-800.webp 800w, /images/w/colorado-hero-1200.webp 1200w, /images/w/colorado-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Texas", "item": "https://dominionhardmoney.com/hard-money-lenders/texas/"}, {"@type": "ListItem", "position": 3, "name": "El Paso"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is buying a rental near Fort Bliss a good investment?", "acceptedAnswer": {"@type": "Answer", "text": "It can be, if you price the turnover. Military households move on orders, so vacancies come more often, but units near the post tend to re-rent quickly because new households arrive on the same schedule. Budget extra vacancy weeks and a make-ready each cycle."}}, {"@type": "Question", "name": "Can a military tenant break my El Paso lease early?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, in many cases. Federal law lets service members end a residential lease early after qualifying orders, such as a permanent change of station or a deployment of 90 days or more, with written notice. Plan your vacancy budget with that in mind."}}, {"@type": "Question", "name": "Can I get a DSCR loan on an El Paso rental with no minimum credit score?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partners' DSCR program has no minimum credit score. It lends from $75,000 to $2 million, up to 80 percent of value on a purchase or rate-and-term refinance, and qualifies the property on its rent. The lender decides."}}, {"@type": "Question", "name": "Can I sell my El Paso flip to an FHA buyer?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but not within 90 days of your purchase. FHA generally will not insure a resale within 90 days of the seller's acquisition, and a resale within 91 to 180 days at double the price or more needs a second appraisal. Finish the house to pass the buyer's appraisal too."}}, {"@type": "Question", "name": "Will my El Paso rental's property tax go up after I buy?", "acceptedAnswer": {"@type": "Answer", "text": "Often. Texas's 20 percent yearly limit on non-homestead appraisals only applies after a full calendar year of ownership and is removed when the property sells. Estimate taxes on your purchase price and the full combined rate for the property's taxing units."}}, {"@type": "Question", "name": "What does an El Paso fix and flip loan cost?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partners' standard pricing starts at 12.99 percent plus 2.99 points, from $50,000, up to 70 percent of after-repair value and 100 percent of cost. After two loans paid off in good standing, loyalty pricing of 10.99 percent plus 1.99 points can apply."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

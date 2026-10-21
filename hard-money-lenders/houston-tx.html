@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/houston-hero-480.webp 480w, /images/w/houston-hero-800.webp 800w, /images/w/houston-hero-1200.webp 1200w, /images/w/houston-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Texas", "item": "https://dominionhardmoney.com/hard-money-lenders/texas/"}, {"@type": "ListItem", "position": 3, "name": "Houston, TX"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I get a hard money loan on a Houston house in a flood zone?", "acceptedAnswer": {"@type": "Answer", "text": "Often, yes. A flood zone is a pricing and insurance question rather than an automatic decline. Expect the lender to want the flood determination and a real insurance quote so the deal is underwritten on its actual carrying costs. The lender makes the final decision."}}, {"@type": "Question", "name": "Will my Houston rehab have to be elevated if it is in the floodplain?", "acceptedAnswer": {"@type": "Answer", "text": "It can. If the cost of the work reaches 50 percent of the structure's market value, it counts as a substantial improvement, and inside the City of Houston that means meeting the Chapter 19 standard of two feet above the 500-year flood elevation. Ask the city how your scope will be counted before you buy."}}, {"@type": "Question", "name": "What property tax rate should I use for a Houston rental?", "acceptedAnswer": {"@type": "Answer", "text": "Inside the City of Houston and Houston ISD, the main 2025 rates add up to about 2 percent of taxable value, before Houston Community College and any utility district. Use your expected post-purchase value, not the seller's bill."}}, {"@type": "Question", "name": "Houston has no zoning, so can I add units or split a lot?", "acceptedAnswer": {"@type": "Answer", "text": "Not automatically. Many subdivisions have recorded deed restrictions on use, setbacks, lot size and the number of structures, and the City of Houston helps enforce them. Read the restrictions for that lot before you go under contract."}}, {"@type": "Question", "name": "Do I have to tell my Houston tenants about flooding?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Texas Property Code section 92.0135 requires a written flood notice with a residential lease, stating whether you know the home is in a 100-year floodplain and whether it has flooded in the last five years. TREC publishes a form for it."}}, {"@type": "Question", "name": "What does a hard money loan for a Houston flip cost?", "acceptedAnswer": {"@type": "Answer", "text": "Standard pricing from our lending partners starts at 12.99 percent plus 2.99 points, from $50,000, up to 100 percent of cost and no more than 70 percent of after-repair value. Loyalty pricing of 10.99 percent plus 1.99 points applies only after two loans have been paid off with the lending partner in good standing."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

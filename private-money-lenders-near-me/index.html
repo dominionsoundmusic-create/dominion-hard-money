@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/vetting-hero-480.webp 480w, /images/w/vetting-hero-800.webp 800w, /images/w/vetting-hero-1200.webp 1200w, /images/w/vetting-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Private Money", "item": "https://dominionhardmoney.com/private-money-lender/"}, {"@type": "ListItem", "position": 3, "name": "Near Me"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is private money the same as hard money?", "acceptedAnswer": {"@type": "Answer", "text": "Mostly, yes. Both are loans from a non-bank lender, secured by the property and priced for speed rather than for the lowest rate. People tend to say hard money for a lending company with set programs and private money for an individual, but the terms overlap and many companies use both."}}, {"@type": "Question", "name": "How do I find private money lenders in my area?", "acceptedAnswer": {"@type": "Answer", "text": "Start where local deals get closed: real estate investor association meetings, the title companies and real estate attorneys who handle investor closings, and the county recorder, where mortgages and deeds of trust name every lender, including individuals. Financial advisers who work with self-directed retirement accounts are another route."}}, {"@type": "Question", "name": "How much do private money lenders charge?", "acceptedAnswer": {"@type": "Answer", "text": "An individual's rate and points are whatever the two of you agree, which is why they vary so widely. A private lending company sets its terms in advance: our lending partners' fix and flip and bridge loans are priced from 12.99 percent plus 2.99 points as standard, with 10.99 percent plus 1.99 points available only after two loans have been paid off with them in good standing."}}, {"@type": "Question", "name": "Can someone lend me money from their IRA?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, a self-directed IRA can make a loan secured by real estate, but not to just anyone. Federal tax law bars the account from lending to disqualified persons, which include the account owner, their spouse, their parents and grandparents, their children and grandchildren and those children's spouses. A friend or unrelated investor can lend from their IRA; the owner's son cannot borrow from it."}}, {"@type": "Question", "name": "Do private money lenders check your credit?", "acceptedAnswer": {"@type": "Answer", "text": "Individuals often do not, and nothing requires them to. Lending companies generally do: our lending partners' fix and flip program lists a 600 minimum score. Either way, the property carries most of the decision, so a clean title, a supported value and a real exit plan matter more than the score."}}, {"@type": "Question", "name": "How do I spot a fake private money lender?", "acceptedAnswer": {"@type": "Answer", "text": "Be wary of anyone who promises approval before seeing the property, asks for a fee before issuing written terms, or wants money wired to a personal account. The Federal Trade Commission warns that a lender demanding payment up front for a loan is the classic advance-fee scam, and that money sent that way is rarely recovered."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

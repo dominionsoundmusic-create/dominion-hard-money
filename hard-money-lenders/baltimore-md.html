@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,6 +268,11 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
 </style><script src="/assets/site.js?v=1fdf2e34" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/maryland-hero-480.webp 480w, /images/w/maryland-hero-800.webp 800w, /images/w/maryland-hero-1200.webp 1200w, /images/w/maryland-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Maryland", "item": "https://dominionhardmoney.com/hard-money-lenders/maryland/"}, {"@type": "ListItem", "position": 3, "name": "Baltimore"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much do hard money lenders in Baltimore charge?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partner's standard pricing on fix and flip and bridge loans begins at 12.99 percent interest plus 2.99 points, interest only. Lower loyalty pricing applies only after two loans have been paid off with the lender. In Baltimore City, also budget about 3 percent of the price for transfer and recordation taxes at each closing."}}, {"@type": "Question", "name": "Do hard money lenders require a down payment in Baltimore?", "acceptedAnswer": {"@type": "Answer", "text": "Usually some cash, and how much depends on the jurisdiction. In Baltimore County our lending partner caps leverage at 50 percent. Baltimore City is a separate jurisdiction that is not on that list, so leverage there is confirmed deal by deal, within the limit of 100 percent of cost and 70 percent of after-repair value. Borrowers generally need at least $15,000 in reserves too."}}, {"@type": "Question", "name": "Is Baltimore City part of Baltimore County?", "acceptedAnswer": {"@type": "Answer", "text": "No. Baltimore City separated from Baltimore County in 1851 and is treated as the equal of a county, with its own taxes, housing rules and land records. Check the jurisdiction on the property's SDAT record rather than relying on a Baltimore mailing address."}}, {"@type": "Question", "name": "Can I get a hard money loan on a cheap Baltimore rowhouse?", "acceptedAnswer": {"@type": "Answer", "text": "Only if the finished house is worth at least $100,000. Our lending partner requires that minimum after-repair value, so on the city's lowest-priced blocks, show recent sales of renovated houses nearby that support the value."}}, {"@type": "Question", "name": "Are hard money loans dangerous?", "acceptedAnswer": {"@type": "Answer", "text": "They carry real risk. The interest rate and points are higher than a bank's, and the loan has to be repaid from a sale or a refinance. In Baltimore, delays from vacant building permits, rental licensing or lead inspections add carrying cost, so build those into your timeline and keep reserves."}}, {"@type": "Question", "name": "Do I need a rental license for a Baltimore City rental?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every residential rental unit in the city must be registered, inspected and licensed. Since January 1, 2026 licenses run for two years, cannot be transferred, and a new owner needs a new license within 60 days of buying a rental property."}}]}</script>

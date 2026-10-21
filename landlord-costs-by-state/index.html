@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/rates-hero-480.webp 480w, /images/w/rates-hero-800.webp 800w, /images/w/rates-hero-1200.webp 1200w, /images/w/rates-hero-1600.webp 1600w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Landlord costs by state"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What percentage of rent should I budget for expenses on a rental?", "acceptedAnswer": {"@type": "Answer", "text": "The fifty percent rule is a starting point, not an answer, and it fails hardest in exactly the states where the money is. In Florida the insurance line alone can eat a large share of gross rent. In Hartford the tax line can do the same. Build the number from actual line items for the specific state rather than applying a national ratio."}}, {"@type": "Question", "name": "Why is my property tax higher than the previous owner's?", "acceptedAnswer": {"@type": "Answer", "text": "Usually one of three mechanisms. In Michigan the property lost its Principal Residence Exemption when it stopped being owner-occupied, adding up to 18 mills of school operating tax. In Florida the non-homestead assessment cap reset on the change of ownership, so you are taxed on current value rather than the seller's capped basis. In Pennsylvania, a sale can prompt a taxing district appeal that resets the assessment."}}, {"@type": "Question", "name": "Which state is best for buying rental property?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single answer. Massachusetts and Maryland carry the heaviest compliance burden on this list. Texas and Connecticut's high-rate towns carry the heaviest tax. Florida and Colorado carry the heaviest insurance. The right question is not which state is best but which line item in a given state you are equipped to manage."}}, {"@type": "Question", "name": "Does Washington's rent cap apply to my single-family rental?", "acceptedAnswer": {"@type": "Answer", "text": "Usually, yes, if you are an investor. The exemptions cover units within twelve years of their first certificate of occupancy, certain owner-occupied properties, and some nonprofit and public housing, not investor-owned single-family homes generally."}}, {"@type": "Question", "name": "How do I finance a rental property in these states?", "acceptedAnswer": {"@type": "Answer", "text": "Dominion Hard Money arranges purchase, rehab and refinance funding for non-owner-occupied investment property through third-party lending partners, including fix and flip, bridge and DSCR rental loans. Send the deal through the form on this page and the lending partner's team will review it. The lender makes every credit decision."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

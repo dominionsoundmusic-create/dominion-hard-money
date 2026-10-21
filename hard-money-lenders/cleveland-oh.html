@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/hardmoney-hero-480.webp 480w, /images/w/hardmoney-hero-800.webp 800w, /images/w/hardmoney-hero-1200.webp 1200w, /images/w/hardmoney-hero-1600.webp 1600w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Ohio", "item": "https://dominionhardmoney.com/hard-money-lenders/ohio/"}, {"@type": "ListItem", "position": 3, "name": "Cleveland"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How competitive is flipping in Cleveland right now?", "acceptedAnswer": {"@type": "Answer", "text": "Very. ATTOM put flips at 12.1 percent of Cleveland-area home sales in the first quarter of 2026 and 10.4 percent in the second, the highest rate of any metro with a million or more people that quarter. You are competing with many other investors for the same houses."}}, {"@type": "Question", "name": "How much cash do I need for a Cleveland fix and flip loan?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the after-repair value. Our lending partners lend up to 70 percent of ARV and 100 percent of cost, whichever is lower, so a deal whose costs run above 70 percent of a realistic ARV needs your cash for the gap, plus points, closing costs and reserves."}}, {"@type": "Question", "name": "Do Cleveland rentals need a Lead Safe Certificate?", "acceptedAnswer": {"@type": "Answer", "text": "If the building was put up before 1978, yes. Cleveland requires a Lead Safe Certificate, based on a lead inspection by a state-approved lead professional, and rental registration with the city. Plan the inspection and any lead work into your renovation."}}, {"@type": "Question", "name": "Is there a minimum loan size for a cheap Cleveland house?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our lending partners' minimum loan is $50,000. On some of Cleveland's lowest-priced streets a small purchase and rehab will not reach it, so check the numbers before you go under contract."}}, {"@type": "Question", "name": "How much security deposit can a Cleveland landlord charge?", "acceptedAnswer": {"@type": "Answer", "text": "Ohio does not cap the amount. A landlord must return the deposit, with an itemized list of deductions, within 30 days after the tenancy ends, and owes interest on the part above $50 or one month's rent, whichever is greater, if the tenant stays six months or more."}}, {"@type": "Question", "name": "What rate do hard money lenders charge in Cleveland?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partners' standard fix-and-flip pricing starts at 12.99 percent plus 2.99 points. After two loans paid off in good standing, loyalty pricing of 10.99 percent plus 1.99 points can apply. The lender sets the final terms."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

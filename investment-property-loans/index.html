@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/dscr-hero-480.webp 480w, /images/w/dscr-hero-800.webp 800w, /images/w/dscr-hero-1200.webp 1200w, /images/w/dscr-hero-1600.webp 1600w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Investment property loans"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much do I need to put down on an investment property?", "acceptedAnswer": {"@type": "Answer", "text": "On a conventional Fannie Mae purchase, at least 15% for a single-family rental and 25% for two to four units, and putting 25% down on a single-family avoids mortgage insurance and cuts the price adjustments sharply. Our lending partners' DSCR loans go up to 80% of value, so from 20% down."}}, {"@type": "Question", "name": "What credit score do I need for an investment property loan?", "acceptedAnswer": {"@type": "Answer", "text": "Most conventional lenders still look for about 620, although Fannie Mae no longer sets a fixed minimum for loans run through Desktop Underwriter, with better pricing at each higher band. Our lending partners require 600 on fix and flip and bridge loans and set no minimum score on their DSCR rental loans."}}, {"@type": "Question", "name": "How many investment properties can I finance with a conventional loan?", "acceptedAnswer": {"@type": "Answer", "text": "Fannie Mae allows up to ten financed properties, counting your home if it has a mortgage. Past that you need DSCR, portfolio or private financing regardless of your credit or income."}}, {"@type": "Question", "name": "Can I use a HELOC on my house for the down payment on a rental?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Fannie Mae accepts documented funds borrowed against an asset you own, while it does not allow gift money on an investment property. Bear in mind the new payment adds to your debt-to-income and brings the conventional limit closer."}}, {"@type": "Question", "name": "Why are investment property rates higher than a normal mortgage?", "acceptedAnswer": {"@type": "Answer", "text": "Fannie Mae and Freddie Mac charge an extra loan-level price adjustment on investment property, from 1.125% of the loan at low leverage up to 4.125% above 80% loan to value, and lenders usually fold it into the rate. The full breakdown is on our rates page."}}, {"@type": "Question", "name": "Should I use a conventional loan or a DSCR loan for my rental?", "acceptedAnswer": {"@type": "Answer", "text": "If your income documents cleanly, you have fewer than ten financed properties and time for a full underwrite, conventional is usually cheaper. If you are self-employed, writing off heavily, buying through an entity, or scaling past the cap, DSCR is usually what keeps you moving."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

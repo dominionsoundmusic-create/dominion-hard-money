@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/credit-hero-480.webp 480w, /images/w/credit-hero-800.webp 800w, /images/w/credit-hero-1200.webp 1200w, /images/w/credit-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Credit"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the lowest credit score for a hard money loan?", "acceptedAnswer": {"@type": "Answer", "text": "Through our lending partners, fix and flip, rehab and bridge loans need a 600 minimum score. Their DSCR rental loans have no minimum, because the property's rent carries the file. Other lenders set their own floors."}}, {"@type": "Question", "name": "Can I get a hard money loan with a 550 credit score?", "acceptedAnswer": {"@type": "Answer", "text": "Not on our lending partners' flip or bridge loans, which require 600. If the property will rent, a DSCR loan with no minimum score is the route to look at, and the lender reviews the rent, the value and your cash rather than the score alone."}}, {"@type": "Question", "name": "Will applying for a hard money loan hurt my credit?", "acceptedAnswer": {"@type": "Answer", "text": "Ask whether the lender uses a soft or a hard pull before you authorize it. A hard inquiry can have a small, temporary effect on your score, and you should know which one you are agreeing to before you apply, not after."}}, {"@type": "Question", "name": "Do hard money lenders verify my income or employment?", "acceptedAnswer": {"@type": "Answer", "text": "These are business-purpose loans underwritten on the property. Pay stubs, tax returns and debt-to-income ratios are generally not the deciding factors the way they are on a conventional mortgage. What matters is the deal, your cash reserves and the exit."}}, {"@type": "Question", "name": "Can I get a hard money loan after a bankruptcy or foreclosure?", "acceptedAnswer": {"@type": "Answer", "text": "It is not automatically a no, but it is a real factor and how recent it is matters a great deal. Say so up front. A lender who learns about it in underwriting after an appraisal has been ordered has lost time and money, and that never helps your file."}}, {"@type": "Question", "name": "Can I use a hard money loan to buy a house I will live in?", "acceptedAnswer": {"@type": "Answer", "text": "Not through our lending partners. Their programs are for non-owner-occupied investment property only. A loan on a home you live in is consumer credit, which comes with federal ability-to-repay and disclosure rules that these business-purpose programs are not built for."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

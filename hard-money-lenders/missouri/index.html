@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/missouri-hero-480.webp 480w, /images/w/missouri-hero-800.webp 800w, /images/w/missouri-hero-1200.webp 1200w, /images/w/missouri-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "States", "item": "https://dominionhardmoney.com/states.html"}, {"@type": "ListItem", "position": 3, "name": "Missouri"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much do hard money loans cost in Missouri?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partners' fix and flip and bridge pricing starts at 12.99 percent plus 2.99 points. Borrowers who have paid off two loans with the lending partner in good standing can qualify for 10.99 percent plus 1.99 points. Appraisal, title and closing costs come on top, but Missouri adds no transfer tax at the sale."}}, {"@type": "Question", "name": "Can I get a hard money loan in St. Louis City or St. Louis County?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partners review non-owner-occupied investment property in both, and in St. Charles and Jefferson counties, held in an LLC or corporation. The lending partner's team confirms the available leverage for each address before you commit, and the lender decides."}}, {"@type": "Question", "name": "Does Missouri's capital gains exemption apply to a flip?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not. The exemption covers income reported as a capital gain on the federal return, and a quick flip is normally reported as ordinary business income. A rental held and later sold generally does produce a capital gain. Confirm how your sale will be treated with a CPA; this is general information, not tax advice."}}, {"@type": "Question", "name": "Is there a real estate transfer tax in Missouri?", "acceptedAnswer": {"@type": "Answer", "text": "No. Article X, Section 25 of the Missouri constitution bars the state and local governments from imposing a tax on the sale or transfer of real estate."}}, {"@type": "Question", "name": "When will my Missouri rental be reassessed?", "acceptedAnswer": {"@type": "Answer", "text": "Missouri reassesses as of January 1 of each odd-numbered year, so the next general reassessment is January 1, 2027. Residential property is taxed on 19 percent of market value, and the assessor can add value for improvements in any year."}}, {"@type": "Question", "name": "Do I need a rental permit in Kansas City, Missouri?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Under the Healthy Homes Rental Inspection Program, rental property owners in Kansas City, Missouri must register and hold an annual permit, and the Health Department inspects on complaint."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

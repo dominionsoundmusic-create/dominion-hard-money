@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/atlanta-hero-480.webp 480w, /images/w/atlanta-hero-800.webp 800w, /images/w/atlanta-hero-1200.webp 1200w, /images/w/atlanta-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Georgia", "item": "https://dominionhardmoney.com/hard-money-lenders/georgia/"}, {"@type": "ListItem", "position": 3, "name": "Atlanta, GA"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I get a hard money loan in Atlanta with no credit check?", "acceptedAnswer": {"@type": "Answer", "text": "Not through our lending partners. Credit is pulled and the minimum score on fix-and-flip and bridge programs is 600. It affects pricing and eligibility, but the property, the budget and the exit carry the decision."}}, {"@type": "Question", "name": "How much do hard money lenders charge in Atlanta?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partners' standard fix-and-flip pricing starts at 12.99 percent interest plus 2.99 points. Borrowers who have paid off two loans with the lending partner in good standing can qualify for 10.99 percent plus 1.99 points. Appraisal, title and closing costs are additional, and the lender sets the final terms."}}, {"@type": "Question", "name": "How much cash do I need to flip a house in Atlanta?", "acceptedAnswer": {"@type": "Answer", "text": "More than many first-time flippers expect. Loans are capped at 70 percent of after-repair value, so on the average Atlanta flip in ATTOM and Backflip's first-quarter 2026 sample ($370,000 in, $470,000 out) the loan limit is about $329,000, below the purchase price alone. You bring the gap, closing costs and reserves."}}, {"@type": "Question", "name": "Do Atlanta hard money lenders require an appraisal?", "acceptedAnswer": {"@type": "Answer", "text": "Expect the lender to order a valuation of the property, usually an appraisal, including an after-repair value for a renovation loan. The loan is sized on that figure, not on your estimate, so build your ARV from nearby renovated sales."}}, {"@type": "Question", "name": "Are Atlanta flips still profitable in 2026?", "acceptedAnswer": {"@type": "Answer", "text": "The average one was in early 2026: ATTOM and Backflip found a 27 percent gross return on first-quarter Atlanta flips, against 4.3 percent in Dallas-Fort Worth. That is before holding, financing and selling costs, and attached homes are now selling more slowly, so the margin on any single deal depends on the purchase price and the product."}}, {"@type": "Question", "name": "How do I refinance out of a hard money loan on an Atlanta rental?", "acceptedAnswer": {"@type": "Answer", "text": "The usual exit is a DSCR loan, which qualifies on the property's rent rather than your personal income. Our lending partners' DSCR program goes up to 80 percent of value on a purchase or rate-and-term refinance. The rent and the appraised value at refinance decide how much of your cash comes back out."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

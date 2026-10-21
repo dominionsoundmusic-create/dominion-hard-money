@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/3-480.webp 480w, /images/w/3-800.webp 800w, /images/w/3-1200.webp 1200w, /images/w/3-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Colorado", "item": "https://dominionhardmoney.com/hard-money-lenders/colorado/"}, {"@type": "ListItem", "position": 3, "name": "Denver"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need a rental license for a Denver investment property?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Denver requires a residential rental license for long-term rentals, including single-unit homes since January 2024. You need an inspection by a certified inspector to get it, it renews every four years, and a license does not transfer when you buy, so plan a new inspection after closing."}}, {"@type": "Question", "name": "Why is homeowners insurance so expensive on a Denver rental?", "acceptedAnswer": {"@type": "Answer", "text": "Hail. The Colorado Division of Insurance's February 2026 analysis found insurers attributed about 51 percent of the average Denver premium to hail. Get a real quote during your inspection period and ask about discounts for impact-resistant roofing."}}, {"@type": "Question", "name": "Can I evict a tenant in Colorado to renovate and re-rent?", "acceptedAnswer": {"@type": "Answer", "text": "Often not without cause. Colorado's 2024 for-cause law requires a listed reason to evict or decline to renew most tenants who have lived in the unit for 12 months or more, and no-fault reasons are limited. Talk to a Colorado attorney before you buy an occupied rental with that plan."}}, {"@type": "Question", "name": "How long does a Denver flip usually take?", "acceptedAnswer": {"@type": "Answer", "text": "In ATTOM and Backflip's first-quarter 2026 analysis, Denver flips averaged about 133 days to payoff. Budget interest, insurance and taxes for at least that long, and longer if permits or a roof replacement are involved."}}, {"@type": "Question", "name": "What does a Denver fix and flip loan cost?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partners' standard pricing starts at 12.99 percent plus 2.99 points, from $50,000, up to 70 percent of after-repair value and 100 percent of cost. After two loans paid off in good standing, loyalty pricing of 10.99 percent plus 1.99 points can apply. The lender sets the final terms."}}, {"@type": "Question", "name": "Is there a transfer tax when I sell a house in Denver?", "acceptedAnswer": {"@type": "Answer", "text": "Only Colorado's small state documentary fee, one cent per $100 of value, when the deed is recorded. Some mountain towns add their own real estate transfer taxes, but the City and County of Denver does not."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

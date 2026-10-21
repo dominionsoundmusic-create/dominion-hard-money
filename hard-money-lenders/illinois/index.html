@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/business-hero-480.webp 480w, /images/w/business-hero-800.webp 800w, /images/w/business-hero-1200.webp 1200w, /images/w/business-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Illinois"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What do hard money lenders charge in Illinois?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partners' fix-and-flip pricing starts at 12.99 percent plus 2.99 points. Loyalty pricing of 10.99 percent plus 1.99 points can apply after two loans are paid off in good standing. In Chicago, the transfer taxes, appraisal, title and closing costs come on top."}}, {"@type": "Question", "name": "Can I get a hard money loan in Chicago?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our lending partners review deals in Chicago, suburban Cook County and the collar counties. Leverage can vary by market and by your experience, so confirm the loan size for the exact address with the lender before you go under contract."}}, {"@type": "Question", "name": "How much is the Chicago transfer tax on a flip?", "acceptedAnswer": {"@type": "Answer", "text": "The city charges the buyer $3.75 per $500 and the seller a $1.50 per $500 transit portion, and the seller also pays the state and Cook County stamps. A flip pays the buyer side when you buy and the seller side when you sell."}}, {"@type": "Question", "name": "Can I get a DSCR loan on a Chicago two-flat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as long as you will not live in either unit. Our lending partners' DSCR program lends from $75,000 to $2 million, up to 80 percent of value on a purchase, with no minimum credit score, sized on the rent after taxes and insurance."}}, {"@type": "Question", "name": "How long is the foreclosure redemption period in Illinois?", "acceptedAnswer": {"@type": "Answer", "text": "For most residential property, until the later of seven months from service of the summons or three months from the judgment. The court must then confirm the sale, so an auction purchase is not final right away."}}, {"@type": "Question", "name": "Can I get a fix and flip loan in Illinois with no experience?", "acceptedAnswer": {"@type": "Answer", "text": "A first-time borrower can apply with a 600 credit score or higher. Expect leverage at the lower end of the range and a close look at the renovation budget, since leverage depends on the projects you can document over the past three years."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

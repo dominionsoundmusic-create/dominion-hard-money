@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/indiana-hero-480.webp 480w, /images/w/indiana-hero-800.webp 800w, /images/w/indiana-hero-1200.webp 1200w, /images/w/indiana-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Indiana"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What do hard money lenders charge in Indiana?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partners' fix-and-flip pricing starts at 12.99 percent plus 2.99 points. Loyalty pricing of 10.99 percent plus 1.99 points can apply after two loans are paid off in good standing. Appraisal, title and closing costs come on top, and the lender sets the final terms."}}, {"@type": "Question", "name": "Can I get a hard money loan in Indianapolis and the suburbs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Investors send deals from Marion County and the surrounding counties, including Carmel, Fishers, Noblesville and Westfield in Hamilton County. Each deal is underwritten on its own neighborhood's sales, not the metro average."}}, {"@type": "Question", "name": "What is the cheapest house I can finance with a flip loan in Indiana?", "acceptedAnswer": {"@type": "Answer", "text": "The minimum loan is $50,000, and the loan is capped at 70 percent of the after-repair value, so a house needs to be worth well above about $71,000 after renovation before a loan is even possible. Confirm low-value deals with the lender early."}}, {"@type": "Question", "name": "How much property tax will I pay on an Indiana rental?", "acceptedAnswer": {"@type": "Answer", "text": "The constitution caps it at 2 percent of gross assessed value for residential rentals, compared with 1 percent for a homestead. Taxes voters approve by referendum are added on top. A rental assessed at $200,000 is capped at about $4,000 before referendum taxes."}}, {"@type": "Question", "name": "Does Indiana have a transfer tax when I sell a flip?", "acceptedAnswer": {"@type": "Answer", "text": "No. Indiana has no real estate transfer tax. You file a sales disclosure form with the county, usually with a small fee."}}, {"@type": "Question", "name": "Do hard money loans in Indiana require a down payment?", "acceptedAnswer": {"@type": "Answer", "text": "In practice, yes. The loan is capped at a share of the after-repair value and of cost, so most deals need the investor to bring cash for part of the purchase and closing costs, plus cash to carry the loan."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

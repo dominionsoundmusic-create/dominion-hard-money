@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,7 +268,12 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
-</style><script src="/assets/site.js?v=cca4e06e" defer></script><!-- /shared-head -->
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
+</style><script src="/assets/site.js?v=de95c03d" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/michigan-hero-480.webp 480w, /images/w/michigan-hero-800.webp 800w, /images/w/michigan-hero-1200.webp 1200w, /images/w/michigan-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "States", "item": "https://dominionhardmoney.com/states.html"}, {"@type": "ListItem", "position": 3, "name": "Michigan"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I get a hard money loan in Detroit?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Our lending partners review non-owner-occupied investment property in Detroit and across Michigan, held in an LLC or corporation. On low-priced Detroit houses, check that the loan you need clears the $50,000 minimum. The lender decides each deal."}}, {"@type": "Question", "name": "Why will my Michigan property tax be higher than the seller's?", "acceptedAnswer": {"@type": "Answer", "text": "Two reasons. A rental does not get the Principal Residence Exemption, so it pays up to 18 school operating mills the owner-occupant did not. And the taxable value uncaps the year after a sale, resetting to half of market value."}}, {"@type": "Question", "name": "What is the transfer tax on a Michigan sale?", "acceptedAnswer": {"@type": "Answer", "text": "The state tax is $3.75 per $500 and the county tax is 55 cents per $500 in most counties, about 0.86 percent in total, customarily paid by the seller."}}, {"@type": "Question", "name": "Can I flip a house I bought at a Michigan sheriff's sale?", "acceptedAnswer": {"@type": "Answer", "text": "Not quickly. After a mortgage foreclosure sale the former owner usually has a redemption period, commonly six months for a home, and your deed only becomes absolute when it ends."}}, {"@type": "Question", "name": "How much security deposit can a Michigan landlord charge?", "acceptedAnswer": {"@type": "Answer", "text": "Up to one and a half months' rent. The landlord must return it or mail an itemized list of damages within 30 days after the tenancy ends."}}, {"@type": "Question", "name": "Does Detroit require rental registration?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Detroit rentals must be registered and pass inspection for a Certificate of Compliance, so put the inspection and any repairs into the timeline before you count on rent."}}]}</script>
 <script>(function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-GZZ9Y7Y0P5";document.head.appendChild(s);}["scroll","click","keydown","touchstart","mousemove"].forEach(function(t){addEventListener(t,load,{once:true,passive:true});});addEventListener("load",function(){setTimeout(load,3500);});})();</script>

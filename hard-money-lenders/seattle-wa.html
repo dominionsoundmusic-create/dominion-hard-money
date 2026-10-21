@@ -15,7 +15,7 @@
 :root{
   --navy:#0a1628;--navy-2:#13233d;--ink:#16202e;--muted:#4a5568;--line:#d5dbe4;
   --gold:#c9a84c;--gold-2:#e0c374;--gold-ink:#5c4409;--white:#fff;
-  --col:72rem;--wide:72rem;--gut:16px;--r:10px;
+  --col:100%;--wide:100%;--gut:clamp(22px,5.5vw,140px);--r:10px;
   --sans:"Inter","Inter Fallback",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,6 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--navy);padding:10px 14px;z-index:999}
 .skip:focus{left:8px;top:8px}
 .container{max-width:var(--wide);margin:0 auto;padding:0 var(--gut)}
-@media(min-width:768px){:root{--gut:28px}}
 
 /* Header */
 header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(201,168,76,.35)}
@@ -269,6 +268,11 @@ footer .legal p{margin:0 0 10px}
 .content .pic,.legacy .pic{padding:0;margin-left:0;margin-right:0}
 .back{display:inline-block;margin:0 0 18px}
 main>section:last-child{padding-bottom:56px}
+
+/* Videos: moderate size, beside the text on wide screens */
+figure.yt-video{max-width:720px}
+@media(min-width:1024px){figure.yt-video{float:right;width:min(46%,720px);margin:6px 0 24px 36px!important}}
+main section.rail::after,main section.band::after{content:"";display:table;clear:both}
 </style><script src="/assets/site.js?v=1fdf2e34" defer></script><!-- /shared-head -->
 <style>:root{color-scheme:light}</style>
 <link rel="preload" as="image" imagesrcset="/images/w/washington-hero-480.webp 480w, /images/w/washington-hero-800.webp 800w, /images/w/washington-hero-1200.webp 1200w, /images/w/washington-hero-1536.webp 1536w" imagesizes="100vw" fetchpriority="high"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dominionhardmoney.com/"}, {"@type": "ListItem", "position": 2, "name": "Washington", "item": "https://dominionhardmoney.com/hard-money-lenders/washington/"}, {"@type": "ListItem", "position": 3, "name": "Seattle"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much do hard money lenders in Seattle charge?", "acceptedAnswer": {"@type": "Answer", "text": "Our lending partner's standard pricing on fix and flip and bridge loans starts at 12.99 percent interest plus 2.99 points, interest only. Lower loyalty pricing applies only after two loans have been paid off with the lender. On a Seattle flip, also budget for the excise tax you pay as the seller when you resell."}}, {"@type": "Question", "name": "Do hard money lenders require a down payment in Seattle?", "acceptedAnswer": {"@type": "Answer", "text": "Usually some cash, even though the loan can cover up to 100 percent of cost. The loan cannot exceed 70 percent of the after-repair value, so at Seattle prices that cap often decides how much you bring. Borrowers also generally need at least $15,000 in reserves."}}, {"@type": "Question", "name": "Are hard money loans dangerous for a Seattle investor?", "acceptedAnswer": {"@type": "Answer", "text": "They are expensive short-term money, so the risk is time. Interest runs every month, and in Seattle a slower resale, a permit or a tenant who cannot be required to leave can add months. Price the exit, the excise tax and a realistic schedule before you borrow."}}, {"@type": "Question", "name": "Who pays the excise tax when I sell a Seattle flip?", "acceptedAnswer": {"@type": "Answer", "text": "The Washington Department of Revenue says the seller usually pays it, so on a flip that is you. The state rate is graduated, starting at 1.1 percent on the first $525,000 of the price in 2026, and Seattle adds 0.5 percent on the full price."}}, {"@type": "Question", "name": "Can I sell a Seattle rental with a tenant in it?", "acceptedAnswer": {"@type": "Answer", "text": "You can sell it, but you may not be able to empty it first. Seattle lets a landlord end a tenancy to sell only for a detached single-family house, with 90 days' notice. In a condo, duplex or apartment the tenant can stay, so check with a Seattle attorney before you buy."}}, {"@type": "Question", "name": "Where do I find hard money lenders in Seattle?", "acceptedAnswer": {"@type": "Answer", "text": "Compare more than one, and ask each for its rate, points, leverage limits and fees in writing before you sign. You can also send your Seattle deal through the form on this page, and our lending partner's team will tell you whether it fits and on what terms."}}]}</script>
